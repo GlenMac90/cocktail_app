@@ -52,3 +52,34 @@ export async function getDrinkById(id: number) {
     throw new Error();
   }
 }
+
+export async function getDrinksByIngredient(ingredient: string) {
+  try {
+    const response = await fetch(
+      `${process.env.API_BASE_URL}filter.php?i=${ingredient}`
+    );
+    const responseJson = await response.json();
+    const formattedData = responseJson.drinks.map((data: DrinkType) => {
+      return formatDrinksData({ data });
+    });
+    return formattedData;
+  } catch (error) {
+    throw new Error();
+  }
+}
+
+export async function getDrinksByAlcoholicStatus(alcoholic: boolean) {
+  const alcoholicStatus = alcoholic ? "Alcoholic" : "Non_Alcoholic";
+  try {
+    const response = await fetch(
+      `${process.env.API_BASE_URL}filter.php?a=${alcoholicStatus}`
+    );
+    const responseJson = await response.json();
+    const formattedData = responseJson.drinks.map((data: DrinkType) => {
+      return formatDrinksData({ data });
+    });
+    return formattedData;
+  } catch (error) {
+    throw new Error();
+  }
+}
