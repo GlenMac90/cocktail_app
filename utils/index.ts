@@ -1,5 +1,6 @@
 import {
   DrinkData,
+  DrinkKeys,
   DrinkResponse,
   FullDrinkData,
   FullDrinkResponseType,
@@ -9,12 +10,12 @@ export const getListOfItems = ({
   data,
   key,
 }: {
-  data: any;
-  key: string;
+  data: FullDrinkResponseType;
+  key: "strIngredient" | "strMeasure";
 }): string[] => {
-  const ingredients = [];
+  const ingredients: string[] = [];
   for (let i = 1; i <= 15; i++) {
-    const ingredient = data[`${key}${i}`];
+    const ingredient = data[`${key}${i}` as DrinkKeys];
     if (ingredient) {
       ingredients.push(ingredient);
     }

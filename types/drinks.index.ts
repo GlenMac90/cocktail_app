@@ -50,6 +50,7 @@ export type FullDrinkResponseType = {
   strImageAttribution: string | null;
   strCreativeCommonsConfirmed: string | null;
   dateModified: string | null;
+  [key: string]: string | null;
 };
 
 export type DrinkResponse = {
@@ -76,3 +77,5 @@ export type DrinkData = {
   name: string;
   image: string;
 };
+
+export type DrinkKeys = `strIngredient${number}` | `strMeasure${number}`;
