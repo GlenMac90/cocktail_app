@@ -1,6 +1,17 @@
-import { DrinkResponse, DrinkType } from "@/types/drinks.index";
+import {
+  DrinkData,
+  DrinkResponse,
+  FullDrinkData,
+  FullDrinkResponseType,
+} from "@/types/drinks.index";
 
-export const getListOfItems = ({ data, key }: { data: any; key: string }) => {
+export const getListOfItems = ({
+  data,
+  key,
+}: {
+  data: any;
+  key: string;
+}): string[] => {
   const ingredients = [];
   for (let i = 1; i <= 15; i++) {
     const ingredient = data[`${key}${i}`];
@@ -11,7 +22,7 @@ export const getListOfItems = ({ data, key }: { data: any; key: string }) => {
   return ingredients;
 };
 
-export const formatFullDrinkData = (data: DrinkResponse) => {
+export const formatFullDrinkData = (data: DrinkResponse): FullDrinkData => {
   const drinkData = data.drinks[0];
   const ingredients = getListOfItems({ data: drinkData, key: "strIngredient" });
   const measures = getListOfItems({ data: drinkData, key: "strMeasure" });
@@ -26,7 +37,11 @@ export const formatFullDrinkData = (data: DrinkResponse) => {
   };
 };
 
-export const formatDrinksData = ({ data }: { data: DrinkType }) => {
+export const formatDrinksData = ({
+  data,
+}: {
+  data: FullDrinkResponseType;
+}): DrinkData => {
   const { idDrink, strDrink, strDrinkThumb } = data;
   return {
     id: idDrink,

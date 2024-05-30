@@ -1,4 +1,4 @@
-export type FullDrinkType = {
+export type FullDrinkResponseType = {
   idDrink: string;
   strDrink: string;
   strDrinkAlternate: string | null;
@@ -53,10 +53,26 @@ export type FullDrinkType = {
 };
 
 export type DrinkResponse = {
-  drinks: FullDrinkType[];
+  drinks: FullDrinkResponseType[];
 };
-export type DrinkType = {
+export type SmallDrinkResponseType = {
   idDrink: string;
   strDrink: string;
   strDrinkThumb: string;
+};
+
+export type FullDrinkData = {
+  name: string;
+  image: string | null;
+  instructions: string;
+  glassType: string;
+  category: string;
+  ingredients: string[];
+  measures: string[];
+};
+
+export type DrinkData = {
+  id: string;
+  name: string;
+  image: string;
 };
