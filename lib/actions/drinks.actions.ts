@@ -1,16 +1,7 @@
 "use server";
 
 import { DrinkType } from "@/types/drinks.index";
-import { formatDrinkData } from "@/utils";
-
-const formatDrinksData = ({ data }: { data: DrinkType }) => {
-  const { idDrink, strDrink, strDrinkThumb } = data;
-  return {
-    id: idDrink,
-    name: strDrink,
-    image: strDrinkThumb,
-  };
-};
+import { formatFullDrinkData, formatDrinksData } from "@/utils";
 
 export async function getAllDrinks() {
   try {
@@ -33,7 +24,7 @@ export async function getDrinkByName(name: string) {
       `${process.env.API_BASE_URL}search.php?s=${name}`
     );
     const responseJson = await response.json();
-    const formattedData = formatDrinkData(responseJson);
+    const formattedData = formatFullDrinkData(responseJson);
     return formattedData;
   } catch (error) {
     throw new Error();
@@ -46,7 +37,7 @@ export async function getDrinkById(id: number) {
       `${process.env.API_BASE_URL}lookup.php?i=${id}`
     );
     const responseJson = await response.json();
-    const formattedData = formatDrinkData(responseJson);
+    const formattedData = formatFullDrinkData(responseJson);
     return formattedData;
   } catch (error) {
     throw new Error();

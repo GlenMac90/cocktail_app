@@ -11,7 +11,7 @@ export const getListOfItems = ({ data, key }: { data: any; key: string }) => {
   return ingredients;
 };
 
-export const formatDrinkData = (data: DrinkResponse) => {
+export const formatFullDrinkData = (data: DrinkResponse) => {
   const drinkData = data.drinks[0];
   const ingredients = getListOfItems({ data: drinkData, key: "strIngredient" });
   const measures = getListOfItems({ data: drinkData, key: "strMeasure" });

@@ -1,11 +1,7 @@
-import {
-  getAllDrinks,
-  getDrinksByIngredient,
-  getDrinksByAlcoholicStatus,
-} from "@/lib/actions/drinks.actions";
+import { getAllDrinks } from "@/lib/actions/drinks.actions";
 
 export default async function Home() {
-  const drinks = await getDrinksByAlcoholicStatus(false);
+  const drinks = await getAllDrinks();
 
   console.log(drinks);
 
