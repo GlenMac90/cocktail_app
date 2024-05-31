@@ -1,7 +1,6 @@
 import {
   DrinkData,
   DrinkKeys,
-  DrinkResponse,
   FullDrinkData,
   FullDrinkResponseType,
 } from "@/types/drinks.index";
@@ -23,7 +22,11 @@ export const getListOfItems = ({
   return ingredients;
 };
 
-export const formatFullDrinkData = (data: DrinkResponse): FullDrinkData => {
+export const formatFullDrinkData = ({
+  data,
+}: {
+  data: { drinks: FullDrinkResponseType[] };
+}): FullDrinkData => {
   const drinkData = data.drinks[0];
   const ingredients = getListOfItems({ data: drinkData, key: "strIngredient" });
   const measures = getListOfItems({ data: drinkData, key: "strMeasure" });

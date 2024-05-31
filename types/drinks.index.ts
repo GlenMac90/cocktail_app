@@ -53,9 +53,6 @@ export type FullDrinkResponseType = {
   [key: string]: string | null;
 };
 
-export type DrinkResponse = {
-  drinks: FullDrinkResponseType[];
-};
 export type SmallDrinkResponseType = {
   idDrink: string;
   strDrink: string;
