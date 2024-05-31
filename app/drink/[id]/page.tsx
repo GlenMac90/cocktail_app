@@ -33,6 +33,17 @@ const Drink = async ({ params }: { params: { id: string } }) => {
             </div>
           )}
           <h3 className="semibold-40 mt-5 text-light-100">{name}</h3>
+          {ingredients && (
+            <div className="mt-10">
+              <h4 className="orange-heading">INGREDIENTS</h4>
+            </div>
+          )}
+          {instructions && (
+            <div className="mt-[3.125rem] flex w-full flex-col gap-5 xl:mt-[3.75rem] xl:gap-[1.875rem]">
+              <h4 className="orange-heading">INSTRUCTIONS</h4>
+              <p className="medium-18 text-light-100">{instructions}</p>
+            </div>
+          )}
         </aside>
       </section>
       <section className="page-content-max-width flex w-full flex-col">
