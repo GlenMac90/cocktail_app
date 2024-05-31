@@ -75,4 +75,10 @@ export type DrinkData = {
   image: string;
 };
 
+export type DrinkDataResponse = {
+  drinks: DrinkData[];
+  isMorePosts: boolean;
+  skip: number;
+};
+
 export type DrinkKeys = `strIngredient${number}` | `strMeasure${number}`;

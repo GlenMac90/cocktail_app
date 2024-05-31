@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <Hero />
-      <AllDrinks drinks={drinks} />
+      <AllDrinks data={drinks} />
     </main>
   );
 }
