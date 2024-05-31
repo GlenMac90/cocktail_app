@@ -62,4 +62,8 @@
   .semibold-40 {
     @apply text-[40px] leading-[40px] font-semibold;
   }
+
+  .serif-heading {
+    @apply text-[40px] leading-[40px] font-serif;
+  }
 }

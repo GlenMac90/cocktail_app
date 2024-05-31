@@ -15,11 +15,11 @@ const config: Config = {
       },
       colors: {
         slate: {
-          100: "#0D0D10",
-          200: "#14181E",
-          300: "#232833",
+          dark: "#0D0D10",
+          mid: "#14181E",
+          light: "#232833",
         },
-        white: {
+        light: {
           100: "#FFFFFF",
           200: "#C0C9D6",
         },

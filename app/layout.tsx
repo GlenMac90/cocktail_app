@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plexSans.className} overscroll-none`}>
+      <body className={`${plexSans.className} overscroll-none bg-slate-dark`}>
         {children}
       </body>
     </html>
