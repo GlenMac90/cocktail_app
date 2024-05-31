@@ -34,4 +34,36 @@
   .vertical-end {
     @apply flex items-center justify-end flex-col;
   }
+
+  .medium-12 {
+    @apply text-[12px] leading-[13.2px] font-medium;
+  }
+
+  .medium-16 {
+    @apply text-[16px] leading-[17.6px] font-medium;
+  }
+
+  .medium-18 {
+    @apply text-[18px] leading-[25.2px] font-medium;
+  }
+
+  .base-20 {
+    @apply text-[20px] leading-[22px];
+  }
+
+  .medium-20 {
+    @apply text-[20px] leading-[22px] font-medium;
+  }
+
+  .semibold-24 {
+    @apply text-[24px] leading-[26.4px] font-semibold;
+  }
+
+  .semibold-40 {
+    @apply text-[40px] leading-[40px] font-semibold;
+  }
+
+  .serif-heading {
+    @apply text-[40px] leading-[40px] font-serif;
+  }
 }
