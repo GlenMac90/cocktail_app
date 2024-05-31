@@ -66,4 +66,8 @@
   .serif-heading {
     @apply text-[40px] leading-[40px] font-serif;
   }
+
+  .hero-heading {
+    @apply text-[88px] leading-[88px] font-serif;
+  }
 }
