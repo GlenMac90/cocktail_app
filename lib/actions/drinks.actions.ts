@@ -4,10 +4,13 @@ import {
   FullDrinkResponseType,
   FullDrinkData,
   DrinkData,
+  DrinkDataResponse,
 } from "@/types/drinks.index";
 import { formatFullDrinkData, formatDrinksData } from "@/utils";
 
-export async function getAllDrinks(): Promise<DrinkData[]> {
+export async function getAllDrinks(
+  skip: number = 0
+): Promise<DrinkDataResponse> {
   try {
     const response = await fetch(
       `${process.env.API_BASE_URL}filter.php?c=Ordinary_Drink`
@@ -18,7 +21,14 @@ export async function getAllDrinks(): Promise<DrinkData[]> {
         return formatDrinksData({ data });
       }
     );
-    return formattedData;
+
+    const isMorePosts = formattedData.length > skip + 9;
+
+    return {
+      drinks: formattedData.slice(skip, skip + 9),
+      isMorePosts,
+      skip: skip + 9,
+    };
   } catch (error) {
     throw new Error();
   }
@@ -30,7 +40,7 @@ export async function getDrinkByName(name: string): Promise<FullDrinkData> {
       `${process.env.API_BASE_URL}search.php?s=${name}`
     );
     const responseJson = await response.json();
-    const formattedData = formatFullDrinkData(responseJson);
+    const formattedData = formatFullDrinkData({ data: responseJson });
     return formattedData;
   } catch (error) {
     throw new Error();
@@ -43,7 +53,7 @@ export async function getDrinkById(id: number): Promise<FullDrinkData> {
       `${process.env.API_BASE_URL}lookup.php?i=${id}`
     );
     const responseJson = await response.json();
-    const formattedData = formatFullDrinkData(responseJson);
+    const formattedData = formatFullDrinkData({ data: responseJson });
     return formattedData;
   } catch (error) {
     throw new Error();
