@@ -1,3 +1,5 @@
+import React from "react";
+
 export type FullDrinkResponseType = {
   idDrink: string;
   strDrink: string;
@@ -80,5 +82,11 @@ export type DrinkDataResponse = {
   isMorePosts: boolean;
   skip: number;
 };
+
+export interface CustomButtonProps {
+  additionalStyles?: string;
+  children: React.ReactNode;
+  handleClick: () => void;
+}
 
 export type DrinkKeys = `strIngredient${number}` | `strMeasure${number}`;

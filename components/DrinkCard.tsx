@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import { DrinkData } from "@/types/drinks.index";
 
 const DrinkCard = ({ drink }: { drink: DrinkData }) => {
