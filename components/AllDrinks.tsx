@@ -9,6 +9,7 @@ import { DrinkData, DrinkDataResponse } from "@/types/drinks.index";
 import useFetch from "@/hooks/useFetch";
 import NoMoreDrinks from "./NoMoreDrinks";
 import DrinkCard from "./DrinkCard";
+import CustomButton from "./CustomButton";
 
 const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
   const { drinks, isMorePosts, fetching, fetchMoreDrinks } = useFetch({
@@ -24,6 +25,10 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
     return () => clearTimeout(timeout);
   }, [inView]);
 
+  const loadMore = () => {
+    if (isMorePosts) fetchMoreDrinks();
+  };
+
   return (
     <section className="flex w-full justify-center px-5 xl:px-[6.25rem]">
       <div className="page-content-max-width mt-12 flex w-full flex-col gap-[1.875rem] xl:mt-[3.75rem] xl:gap-[3.125rem]">
@@ -33,9 +38,20 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
             <DrinkCard key={drink.id} drink={drink} />
           ))}
         </div>
-        <div ref={ref} className="flex-center min-h-60 w-full">
+
+        {!fetching && isMorePosts && (
+          <CustomButton
+            additionalStyles={"w-full h-10 xs:hidden"}
+            handleClick={loadMore}
+          >
+            <span className="medium-20">See More</span>
+          </CustomButton>
+        )}
+
+        <div className="flex-center min-h-40 w-full">
           {fetching && <LoadingGraphic />}
           {!isMorePosts && <NoMoreDrinks />}
+          <div ref={ref} className="hidden h-10 xs:flex" />
         </div>
       </div>
     </section>

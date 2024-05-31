@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 
-const Hero = () => {
-  const handleArrowClick = () => {
-    console.log("Arrow clicked");
-  };
+import CustomButton from "./CustomButton";
 
+const Hero = () => {
+  const handleClick = () => {
+    console.log("Check Collections");
+  };
   return (
     <header className="flex w-full justify-center overflow-hidden bg-[url('/hero-background.png')] bg-cover px-5 lg:px-[6.25rem]">
       <div className="page-content-max-width flex w-full flex-col items-center xl:flex-row ">
@@ -19,9 +20,9 @@ const Hero = () => {
             <span className="text-orange-light">Flavorful Cocktail</span>{" "}
             Journey
           </h1>
-          <button
-            className="flex-center mt-10 h-12 gap-2.5 bg-orange-light sm:h-16 xl:w-[17.375rem]"
-            onClick={handleArrowClick}
+          <CustomButton
+            additionalStyles="mt-10 h-12 gap-2.5 bg-orange-light sm:h-16 xl:w-[17.375rem]"
+            handleClick={handleClick}
           >
             <span className="medium-20">Check Collections</span>
             <Image
@@ -30,7 +31,7 @@ const Hero = () => {
               width={14}
               alt="Arrow pointing down"
             />
-          </button>
+          </CustomButton>
         </div>
         <figure className="flex h-fit w-full max-w-xl shrink-0 items-end xl:mt-20">
           <Image
