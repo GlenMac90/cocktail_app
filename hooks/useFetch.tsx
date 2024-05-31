@@ -18,7 +18,7 @@ const useFetch = ({
     try {
       setFetching(true);
 
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const newDrinks = await fn(skip);
       setDrinks((prevDrinks) => [...prevDrinks, ...newDrinks.drinks]);

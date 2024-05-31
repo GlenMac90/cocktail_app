@@ -6,8 +6,10 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 import { getAllDrinks } from "@/lib/actions/drinks.actions";
+import LoadingGraphic from "./LoadingGraphic";
 import { DrinkData, DrinkDataResponse } from "@/types/drinks.index";
 import useFetch from "@/hooks/useFetch";
+import NoMoreDrinks from "./NoMoreDrinks";
 
 const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
   const { drinks, isMorePosts, fetching, fetchMoreDrinks } = useFetch({
@@ -18,8 +20,8 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (inView) fetchMoreDrinks();
-    }, 250);
+      if (inView && isMorePosts) fetchMoreDrinks();
+    }, 100);
     return () => clearTimeout(timeout);
   }, [inView]);
 
@@ -27,14 +29,14 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
     <section className="flex w-full justify-center px-5 xl:px-[6.25rem]">
       <div className="page-content-max-width mt-12 flex w-full flex-col gap-[1.875rem] xl:mt-[3.75rem] xl:gap-[3.125rem]">
         <h3 className="serif-heading">All Drinks</h3>
-        <div className="flex flex-col gap-8 sm:grid sm:grid-cols-2 md:grid-cols-3 xl:gap-y-[3.125rem]">
+        <div className="flex flex-col gap-8 sm:grid sm:grid-cols-2 xl:grid-cols-3 xl:gap-y-[3.125rem]">
           {drinks.map((drink: DrinkData) => (
             <Link
               href={`/drink/${drink.id}`}
               key={drink.id}
-              className="flex flex-col gap-6 rounded bg-gradient-to-b from-slate-light to-slate-mid p-5"
+              className="rounded bg-gradient-to-b from-slate-light to-slate-mid p-5"
             >
-              <figure>
+              <figure className="flex flex-col gap-6">
                 <Image
                   src={drink.image}
                   height={305}
@@ -42,14 +44,16 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
                   alt="Drink Image"
                   className="w-full rounded object-contain"
                 />
+                <figcaption>
+                  <h4 className="semibold-24 text-light-100">{drink.name}</h4>
+                </figcaption>
               </figure>
-              <figcaption>
-                <h4 className="semibold-24 text-light-100">{drink.name}</h4>
-              </figcaption>
             </Link>
           ))}
-          {isMorePosts && <div ref={ref} className="h-10 bg-red-400"></div>}
-          {fetching && <p className="text-light-100">Loading more drinks...</p>}
+        </div>
+        <div ref={ref} className="flex-center min-h-10 w-full">
+          {fetching && <LoadingGraphic />}
+          {!isMorePosts && <NoMoreDrinks />}
         </div>
       </div>
     </section>
