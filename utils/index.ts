@@ -32,7 +32,7 @@ export const formatFullDrinkData = ({
   const measures = getListOfItems({ data: drinkData, key: "strMeasure" });
   return {
     name: drinkData.strDrink,
-    image: drinkData.strImageSource,
+    image: drinkData.strDrinkThumb,
     instructions: drinkData.strInstructions,
     glassType: drinkData.strGlass,
     category: drinkData.strCategory,

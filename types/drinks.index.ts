@@ -89,4 +89,12 @@ export interface CustomButtonProps {
   handleClick: () => void;
 }
 
+export interface AccordionTemplateProps {
+  data: string[];
+  title: string;
+  open?: boolean;
+}
+
+export type AccordionDataType = { title: string; items: string[] };
+
 export type DrinkKeys = `strIngredient${number}` | `strMeasure${number}`;

@@ -35,6 +35,10 @@
     @apply flex items-center justify-end flex-col;
   }
 
+  .base-12 {
+    @apply text-[12px] leading-[13.2px];
+  }
+
   .medium-12 {
     @apply text-[12px] leading-[13.2px] font-medium;
   }
@@ -44,7 +48,7 @@
   }
 
   .medium-18 {
-    @apply text-[18px] leading-[25.2px] font-medium;
+    @apply text-[16px] leading-[22.4px] sm:text-[18px] sm:leading-[25.2px] font-medium;
   }
 
   .base-20 {
@@ -60,7 +64,7 @@
   }
 
   .semibold-40 {
-    @apply text-[40px] leading-[40px] font-semibold;
+    @apply text-[30px] leading-[40px] sm:text-[40px] sm:leading-[40px] font-semibold;
   }
 
   .serif-heading {
@@ -71,7 +75,15 @@
     @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] lg:text-[88px] lg:leading-[88px] font-serif mt-5 text-center text-light-100 xl:text-start;
   }
 
-  .page-content-max-width {
+  .homepage-content-max-width {
     @apply max-w-3xl xl:max-w-[90rem];
+  }
+
+  .drinkpage-content-max-width {
+    @apply max-w-xl xl:max-w-[90rem];
+  }
+
+  .orange-heading {
+    @apply text-[14px] leading-[15.4px] sm:text-[16px] sm:leading-[17.6px] font-medium text-orange-light;
   }
 }
