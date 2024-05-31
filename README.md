@@ -40,6 +40,8 @@ npm run dev
 
 This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to fetch cocktail data. Below are the key endpoints used in the application:
 
+<img src="public/the-cocktail-db-logo.png" alt="The_Cocktail_DB_Logo" width="600">
+
 ### Get a List of Cocktails
 
 - **Endpoint:** `/filter.php`
