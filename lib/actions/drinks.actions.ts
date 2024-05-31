@@ -88,3 +88,33 @@ export async function getDrinksByAlcoholicStatus(
     throw new Error();
   }
 }
+
+export async function getPopularDrinks(): Promise<DrinkData[]> {
+  try {
+    const response = await fetch(`${process.env.API_BASE_URL}popular.php`);
+    const responseJson = await response.json();
+    const formattedData = responseJson.drinks.map(
+      (data: FullDrinkResponseType) => {
+        return formatDrinksData({ data });
+      }
+    );
+    return formattedData;
+  } catch (error) {
+    throw new Error();
+  }
+}
+
+export async function getLatestDrinks(): Promise<DrinkData[]> {
+  try {
+    const response = await fetch(`${process.env.API_BASE_URL}latest.php`);
+    const responseJson = await response.json();
+    const formattedData = responseJson.drinks.map(
+      (data: FullDrinkResponseType) => {
+        return formatDrinksData({ data });
+      }
+    );
+    return formattedData;
+  } catch (error) {
+    throw new Error();
+  }
+}
