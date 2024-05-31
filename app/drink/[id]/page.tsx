@@ -3,15 +3,22 @@ import Image from "next/image";
 import AccordionTemplate from "@/components/AccordionTemplate";
 import Tag from "@/components/Tag";
 import { getDrinkById } from "@/lib/actions/drinks.actions";
+import { AccordionDataType } from "@/types/drinks.index";
 
 const Drink = async ({ params }: { params: { id: string } }) => {
   const drink = await getDrinkById(+params.id);
 
   const { name, image, ingredients, instructions, glassType, category } = drink;
 
+  const accordionData: AccordionDataType[] = [
+    { title: "INGREDIENTS", data: ingredients },
+    { title: "INSTRUCTIONS", data: [instructions] },
+    { title: "GLASS", data: [glassType] },
+  ];
+
   return (
     <main className="flex min-h-screen flex-col items-center px-5 pb-[6.25rem] pt-12 xl:px-[6.25rem]">
-      <section className="page-content-max-width flex w-full flex-col gap-[1.875rem] xl:flex-row xl:gap-0">
+      <section className="drinkpage-content-max-width flex w-full flex-col gap-[1.875rem] xl:flex-row xl:gap-0">
         <div className="flex flex-col xl:hidden">
           {glassType && category && (
             <div className="flex gap-4">
@@ -40,12 +47,7 @@ const Drink = async ({ params }: { params: { id: string } }) => {
             )}
             <h3 className="semibold-40 mt-5 text-light-100">{name}</h3>
           </div>
-          {ingredients && (
-            <AccordionTemplate data={ingredients} title="INGREDIENTS" open />
-          )}
-          {instructions && (
-            <AccordionTemplate data={[instructions]} title="INSTRUCTIONS" />
-          )}
+          <AccordionTemplate data={accordionData} />
         </aside>
       </section>
       <section className="page-content-max-width flex w-full flex-col">

@@ -75,8 +75,12 @@
     @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] lg:text-[88px] lg:leading-[88px] font-serif mt-5 text-center text-light-100 xl:text-start;
   }
 
-  .page-content-max-width {
+  .homepage-content-max-width {
     @apply max-w-3xl xl:max-w-[90rem];
+  }
+
+  .drinkpage-content-max-width {
+    @apply max-w-xl xl:max-w-[90rem];
   }
 
   .orange-heading {
