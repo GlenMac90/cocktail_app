@@ -21,7 +21,7 @@ Cocktail Explorer is a mobile application that allows users to browse a list of 
    ```
 1. **Navigate to the project directory:**
    ```bash
-   cd cocktail-app
+   cd cocktail_app
    ```
 1. **Install dependencies:**
    ```bash
