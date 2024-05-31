@@ -64,10 +64,14 @@
   }
 
   .serif-heading {
-    @apply text-[40px] leading-[40px] font-serif;
+    @apply text-[40px] leading-[40px] font-serif text-light-100;
   }
 
   .hero-heading {
-    @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] xl:text-[88px] xl:leading-[88px] font-serif mt-5 text-center text-light-100 xl:text-start;
+    @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] lg:text-[88px] lg:leading-[88px] font-serif mt-5 text-center text-light-100 xl:text-start;
+  }
+
+  .page-content-max-width {
+    @apply max-w-3xl xl:max-w-[90rem];
   }
 }
