@@ -68,6 +68,6 @@
   }
 
   .hero-heading {
-    @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] xl:text-[88px] xl:leading-[88px] font-serif;
+    @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] xl:text-[88px] xl:leading-[88px] font-serif mt-5 text-center text-light-100 xl:text-start;
   }
 }
