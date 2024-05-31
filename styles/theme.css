@@ -48,11 +48,11 @@
   }
 
   .base-20 {
-    @apply text-[20px] leading-[22px];
+    @apply text-[16px] leading-[17.6px] sm:text-[20px] sm:leading-[22px];
   }
 
   .medium-20 {
-    @apply text-[20px] leading-[22px] font-medium;
+    @apply text-[16px] leading-[17.6px] sm:text-[20px] sm:leading-[22px] font-medium;
   }
 
   .semibold-24 {
@@ -65,5 +65,9 @@
 
   .serif-heading {
     @apply text-[40px] leading-[40px] font-serif;
+  }
+
+  .hero-heading {
+    @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] xl:text-[88px] xl:leading-[88px] font-serif mt-5 text-center text-light-100 xl:text-start;
   }
 }
