@@ -17,7 +17,7 @@ const AccordionTemplate = ({ data }: { data: AccordionDataType[] }) => {
         defaultValue={data[0].title}
       >
         {data.map((data: AccordionDataType) => {
-          if (!data.data.length) return null;
+          if (!data.items.length) return null;
           return (
             <AccordionItem
               key={data.title}
@@ -28,7 +28,7 @@ const AccordionTemplate = ({ data }: { data: AccordionDataType[] }) => {
                 {data.title}
               </AccordionTrigger>
               <AccordionContent className="mt-4 py-2">
-                {data.data.map((ingredient: string) => (
+                {data.items.map((ingredient: string) => (
                   <p key={ingredient} className="medium-18 py-1 text-light-100">
                     {ingredient}
                   </p>
