@@ -35,6 +35,10 @@
     @apply flex items-center justify-end flex-col;
   }
 
+  .base-12 {
+    @apply text-[12px] leading-[13.2px];
+  }
+
   .medium-12 {
     @apply text-[12px] leading-[13.2px] font-medium;
   }
@@ -60,7 +64,7 @@
   }
 
   .semibold-40 {
-    @apply text-[40px] leading-[40px] font-semibold;
+    @apply text-[30px] leading-[40px] sm:text-[40px] sm:leading-[40px] font-semibold;
   }
 
   .serif-heading {
