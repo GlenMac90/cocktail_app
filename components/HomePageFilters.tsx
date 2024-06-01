@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 import { drinksChoices } from "@/constants";
 import { DrinksFilters } from "@/types/drinks.index";
@@ -34,6 +35,7 @@ const HomePageFilters = ({
           className="serif-heading"
         >
           {title}
+          <ChevronDown size={20} className="ml-2 self-center" />
         </motion.h3>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-64 border-0 bg-slate-mid">
