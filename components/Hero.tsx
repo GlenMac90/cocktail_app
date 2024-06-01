@@ -5,11 +5,11 @@ import Image from "next/image";
 import CustomButton from "./CustomButton";
 
 const Hero = () => {
-  const handleClick = () => {
-    console.log("Check Collections");
-  };
   return (
-    <header className="flex w-full justify-center overflow-hidden bg-[url('/hero-background.png')] bg-cover px-5 lg:px-[6.25rem]">
+    <header
+      id="hero"
+      className="flex w-full justify-center overflow-hidden bg-[url('/hero-background.png')] bg-cover px-5 lg:px-[6.25rem]"
+    >
       <div className="homepage-content-max-width flex w-full flex-col items-center xl:flex-row ">
         <div className="mb-10 flex w-full flex-col xl:max-w-3xl xl:shrink-0">
           <p className="base-20 self-center text-light-100 xl:self-start">
@@ -22,7 +22,7 @@ const Hero = () => {
           </h1>
           <CustomButton
             additionalStyles="mt-10 h-12 gap-2.5 bg-orange-light sm:h-16 xl:w-[17.375rem]"
-            handleClick={handleClick}
+            linkTo="all-drinks"
           >
             <span className="medium-20">Check Collections</span>
             <Image

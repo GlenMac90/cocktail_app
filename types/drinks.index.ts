@@ -86,7 +86,8 @@ export type DrinkDataResponse = {
 export interface CustomButtonProps {
   additionalStyles?: string;
   children: React.ReactNode;
-  handleClick: () => void;
+  handleClick?: () => void;
+  linkTo?: string;
 }
 
 export interface AccordionTemplateProps {

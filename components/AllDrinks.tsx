@@ -31,7 +31,10 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
 
   return (
     <section className="flex w-full justify-center px-5 xl:px-[6.25rem]">
-      <div className="homepage-content-max-width mt-12 flex w-full flex-col gap-[1.875rem] xl:mt-[3.75rem] xl:gap-[3.125rem]">
+      <div
+        id="all-drinks"
+        className="homepage-content-max-width mt-12 flex w-full flex-col gap-[1.875rem] xl:mt-[3.75rem] xl:gap-[3.125rem]"
+      >
         <h3 className="serif-heading">All Drinks</h3>
         <div className="flex flex-col gap-8 sm:grid sm:grid-cols-2 xl:grid-cols-3 xl:gap-y-[3.125rem]">
           {drinks.map((drink: DrinkData) => (

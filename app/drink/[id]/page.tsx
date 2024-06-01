@@ -17,7 +17,7 @@ const Drink = async ({ params }: { params: { id: string } }) => {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-5 pb-[6.25rem] pt-12 xl:px-[6.25rem]">
+    <main className="flex min-h-screen flex-col items-center px-5 pb-[6.25rem] pt-20 lg:pt-28 xl:px-[6.25rem]">
       <section className="drinkpage-content-max-width flex w-full flex-col gap-[1.875rem] xl:flex-row xl:gap-0">
         <div className="flex flex-col xl:hidden">
           {glassType && category && (
