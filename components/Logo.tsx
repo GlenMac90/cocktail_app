@@ -11,7 +11,7 @@ const Logo = () => {
 
   if (pathname === "/") {
     return (
-      <CustomButton scrollTo="hero" additionalStyles="bg-slate-dark">
+      <CustomButton scrollTo="hero" additionalStyles="bg-slate-dark h-[2.3rem]">
         <figure className="flex h-[2.3rem] items-end gap-2">
           <Image
             src="/logo-drink-icon.png"
@@ -29,7 +29,7 @@ const Logo = () => {
   }
 
   return (
-    <Link href="/">
+    <Link href="/" className="h-[2.3rem]">
       <figure className="flex h-[2.3rem] items-end gap-2">
         <Image
           src="/logo-drink-icon.png"
