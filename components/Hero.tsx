@@ -34,8 +34,8 @@ const Hero = () => {
             <span className="medium-20">Check Collections</span>
             <Image
               src="/icons/arrow-down.svg"
-              height={14}
-              width={14}
+              height={10}
+              width={10}
               alt="Arrow pointing down"
             />
           </CustomButton>

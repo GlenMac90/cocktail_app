@@ -22,14 +22,14 @@ Loading graphic of two wind glasses clinking together
         options.
       </p>
       <CustomButton
-        additionalStyles="flex-center gap-2.5 h-[3.375rem] w-[15.9375rem]"
+        additionalStyles="flex-center gap-2.5 h-[3.375rem] w-[17rem]"
         link="/"
       >
-        <span className="medium-20">Check Collections</span>
+        <span className="medium-20">Explore More Cocktails</span>
         <Image
           src="/icons/arrow-down.svg"
-          height={14}
-          width={14}
+          height={10}
+          width={10}
           alt="Arrow pointing down"
         />
       </CustomButton>
