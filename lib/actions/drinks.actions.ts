@@ -82,14 +82,19 @@ export async function getDrinkByName(
     const responseJson = await response.json();
     const formattedData = formatFullDrinkData({ data: responseJson });
 
+    const nameWithSpaces = name.replace(/%20/g, " ");
+
     const popularDrinks = await fetch(`${process.env.API_BASE_URL}popular.php`);
     const similarDrinksJson = await popularDrinks.json();
 
     const formattedSimilarDrinks = similarDrinksJson.drinks
-      .slice(0, 10)
-      .map((data: FullDrinkResponseType) => {
-        return formatDrinksData({ data });
-      });
+      .reduce((acc: DrinkData[], data: FullDrinkResponseType) => {
+        if (data.strDrink !== nameWithSpaces) {
+          acc.push(formatDrinksData({ data }));
+        }
+        return acc;
+      }, [])
+      .slice(0, 10);
 
     return {
       drinkData: formattedData,
