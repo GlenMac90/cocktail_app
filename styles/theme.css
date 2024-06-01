@@ -59,6 +59,10 @@
     @apply text-[16px] leading-[17.6px] sm:text-[20px] sm:leading-[22px] font-medium;
   }
 
+  .base-24 {
+    @apply text-[24px] leading-[26.4px];
+  }
+
   .semibold-24 {
     @apply text-[24px] leading-[26.4px] font-semibold;
   }
