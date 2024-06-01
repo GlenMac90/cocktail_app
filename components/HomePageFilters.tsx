@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -25,9 +26,17 @@ const HomePageFilters = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="flex w-fit cursor-pointer">
-        <h3 className="serif-heading">{title}</h3>
+        <motion.h3
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="serif-heading"
+        >
+          {title}
+        </motion.h3>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="ml-[4.75rem] mt-2 w-64 border-0 bg-slate-mid">
+      <DropdownMenuContent className="w-64 border-0 bg-slate-mid">
         <DropdownMenuGroup>
           {drinksChoices.map((choice) => (
             <DropdownMenuItem key={choice.filter} className="m-0 p-0">
