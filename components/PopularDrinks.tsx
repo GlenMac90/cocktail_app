@@ -27,7 +27,7 @@ const PopularDrinks = ({ drinks }: { drinks: DrinkData[] }) => {
         <CarouselContent>
           {drinks.map((drink: DrinkData) => (
             <CarouselItem
-              key={drink.id}
+              key={drink.apiId}
               className="flex w-full sm:basis-1/2 xl:basis-1/3"
             >
               <DrinkCard drink={drink} />
