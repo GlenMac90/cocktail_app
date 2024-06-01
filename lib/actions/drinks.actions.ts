@@ -37,6 +37,7 @@ export async function getFilteredDrinks({
       skip: skip + 9,
     };
   } catch (error) {
+    console.error(error);
     throw new Error();
   }
 }
@@ -63,6 +64,7 @@ export async function getAllDrinks(
       skip: skip + 9,
     };
   } catch (error) {
+    console.error(error);
     throw new Error();
   }
 }
@@ -101,6 +103,7 @@ export async function getDrinkByName(
       similarDrinks: formattedSimilarDrinks,
     };
   } catch (error) {
+    console.error(error);
     throw new Error();
   }
 }
@@ -120,6 +123,7 @@ export async function getDrinksByIngredient(
     );
     return formattedData;
   } catch (error) {
+    console.error(error);
     throw new Error();
   }
 }
