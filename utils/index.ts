@@ -48,7 +48,7 @@ export const formatDrinksData = ({
 }): DrinkData => {
   const { idDrink, strDrink, strDrinkThumb } = data;
   return {
-    id: idDrink,
+    apiId: idDrink,
     name: strDrink,
     image: strDrinkThumb,
   };

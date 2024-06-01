@@ -74,17 +74,16 @@ export type GetDrinkByNameType = {
   similarDrinks: DrinkData[];
 };
 
-export async function getDrinkByName(
-  name: string
-): Promise<GetDrinkByNameType> {
+export async function getDrinkById(id: number): Promise<GetDrinkByNameType> {
   try {
     const response = await fetch(
-      `${process.env.API_BASE_URL}search.php?s=${name}`
+      `${process.env.API_BASE_URL}lookup.php?i=${id}`
     );
+
     const responseJson = await response.json();
     const formattedData = formatFullDrinkData({ data: responseJson });
 
-    const nameWithSpaces = name.replace(/%20/g, " ");
+    const nameWithSpaces = formattedData.name.replace(/%20/g, " ");
 
     const popularDrinks = await fetch(`${process.env.API_BASE_URL}popular.php`);
     const similarDrinksJson = await popularDrinks.json();
