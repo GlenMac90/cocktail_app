@@ -12,11 +12,11 @@ const Logo = () => {
   if (pathname === "/") {
     return (
       <CustomButton scrollTo="hero" additionalStyles="bg-slate-dark">
-        <figure className="flex items-end gap-2">
+        <figure className="flex h-[2.3rem] items-end gap-2">
           <Image
             src="/logo-drink-icon.png"
             width={25}
-            height={25}
+            height={40}
             alt="Drink Icon"
             className="object-contain"
           />
