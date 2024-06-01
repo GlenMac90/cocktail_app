@@ -30,7 +30,7 @@ const Logo = () => {
 
   return (
     <Link href="/">
-      <figure className="flex items-end gap-2">
+      <figure className="flex h-[2.3rem] items-end gap-2">
         <Image
           src="/logo-drink-icon.png"
           width={25}
