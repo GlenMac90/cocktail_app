@@ -11,8 +11,20 @@ const plexSans = IBMPlexSans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://the-cocktail-corner.vercel.app/"),
   title: "The Cocktail Corner",
   description: "Get your drink on with The Cocktail Corner!",
+  openGraph: {
+    url: "https://the-cocktail-corner.vercel.app/",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1280,
+        height: 720,
+        alt: "The Cocktail Corner",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
