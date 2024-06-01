@@ -19,10 +19,7 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
   const { ref, inView } = useInView();
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (inView && isMorePosts) fetchMoreDrinks();
-    }, 100);
-    return () => clearTimeout(timeout);
+    if (inView && isMorePosts) fetchMoreDrinks();
   }, [inView]);
 
   const loadMore = () => {
