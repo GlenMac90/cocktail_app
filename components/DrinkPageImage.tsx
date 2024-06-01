@@ -9,7 +9,7 @@ const DrinkPageImage = ({ data }: { data: FullDrinkData }) => {
     <motion.figure
       initial={{ opacity: 0, x: -30 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 1, delay: 0.4 }}
       viewport={{ once: true }}
       className="w-full"
     >
