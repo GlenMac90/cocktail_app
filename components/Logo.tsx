@@ -3,22 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Link as ScrollLink } from "react-scroll";
+
+import CustomButton from "./CustomButton";
 
 const Logo = () => {
   const pathname = usePathname();
 
   if (pathname === "/") {
     return (
-      <ScrollLink
-        activeClass="active"
-        to="hero"
-        spy={true}
-        smooth={true}
-        offset={-100}
-        duration={500}
-        className="cursor-pointer"
-      >
+      <CustomButton linkTo="hero" additionalStyles="bg-slate-dark">
         <figure className="flex items-center">
           <Image
             src="/logo-drink-icon.png"
@@ -30,7 +23,7 @@ const Logo = () => {
             COCKTAIL<span className="text-light-100">CORNER</span>
           </span>
         </figure>
-      </ScrollLink>
+      </CustomButton>
     );
   }
 
