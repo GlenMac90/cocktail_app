@@ -17,7 +17,7 @@ const AccordionTemplate = ({ data }: { data: AccordionDataType[] }) => {
         defaultValue={data[0].title}
       >
         {data.map((data: AccordionDataType) => {
-          if (!data.items.length) return null;
+          if (data.items[0] === "") return null;
           return (
             <AccordionItem
               key={data.title}
