@@ -44,7 +44,7 @@ const DrinkCard = ({ drink, delay }: { drink: DrinkData; delay?: number }) => {
     <Link
       href={`/drink/${drink.name}`}
       key={drink.id}
-      className="rounded bg-gradient-to-b from-slate-light to-slate-mid p-5"
+      className="w-full rounded bg-gradient-to-b from-slate-light to-slate-mid p-5"
     >
       <figure className="flex flex-col gap-6">
         <Image
