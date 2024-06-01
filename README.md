@@ -1,4 +1,6 @@
-# Cocktail Explorer
+<img src="public/readme-banner-image.png" alt="Banner Image for The Cocktail Corner" width="1000">
+
+# The Cocktail Corner
 
 Cocktail Explorer is a mobile application that allows users to browse a list of cocktails fetched from TheCocktailDB API. Users can view detailed information about each cocktail by clicking on it, which navigates them to a dynamic route with the drink's details.
 
@@ -107,17 +109,43 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 }
 ```
 
-### Features
+## Features
 
 **Homepage Drink List** - Displays a comprehensive list of drinks, featuring images and names.
 
 **Dynamic Drink Details** - Each drink has a detailed page for more information, including ingredients, measurements, and preparation instructions.
+
+**Filters for different types of drinks** - See a list and filter by all, popular, latest or non-alcoholic drinks.
 
 **Responsive Design** - Fully responsive, ensuring a seamless and enjoyable browsing experience on any device.
 
 **Server-side Rendering** - This site leverages NextJS server side rendering for faster load times and greater user experience.
 
 **Custom Animations** - Custom animations are featured throughout the application using Framer Motion.
+
+**ShadCN components** - Highly customisable pre built components are featured throught the app.
+
+## Screenshots
+
+### Multiple filtering options
+
+<img src="public/readme-screenshots/filters-shot.png" alt="Image displaying the filtering options available" width="1000">
+
+### Loading Animations
+
+<img src="public/readme-screenshots/loader.png" alt="Image displaying the loading animation" width="1000">
+
+### Carousel showing popular drinks
+
+<img src="public/readme-screenshots/carousel.png" alt="Image displaying the popular drinks carousel" width="1000">
+
+### Drink Information
+
+<img src="public/readme-screenshots/info.png" alt="Image displaying the information on a drink" width="1000">
+
+### Carousel showing popular drinks
+
+<img src="public/readme-screenshots/not-found.png" alt="Image displaying the not found page" width="1000">
 
 ### Technologies Used
 
@@ -142,3 +170,7 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 - [Tailwind](https://v2.tailwindcss.com/docs/) - Master the utility-first approach with Tailwind CSS.
 - [ShadCN](https://ui.shadcn.com/docs) - Discover the comprehensive UI components offered by ShadCN.
 - [Framer Motion](https://www.framer.com/motion/) - Animate with ease using Framer Motion.
+
+### Thank you for reading
+
+I am really grateful for you time and I hope you like what you see here.

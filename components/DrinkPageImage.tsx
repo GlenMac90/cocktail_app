@@ -11,7 +11,7 @@ const DrinkPageImage = ({ data }: { data: FullDrinkData }) => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, delay: 0.4 }}
       viewport={{ once: true }}
-      className="w-full"
+      className="flex w-full xl:w-[70%]"
     >
       <Image
         src={data.image ?? "/image-not-found.png"}
@@ -19,6 +19,7 @@ const DrinkPageImage = ({ data }: { data: FullDrinkData }) => {
         width={800}
         priority
         alt={`Image of ${data.name}`}
+        className="object-contain"
       />
     </motion.figure>
   );
