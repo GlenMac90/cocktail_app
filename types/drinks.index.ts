@@ -87,7 +87,8 @@ export interface CustomButtonProps {
   additionalStyles?: string;
   children: React.ReactNode;
   handleClick?: () => void;
-  linkTo?: string;
+  scrollTo?: string;
+  link?: string;
 }
 
 export interface AccordionTemplateProps {

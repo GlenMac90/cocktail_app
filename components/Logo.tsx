@@ -11,13 +11,14 @@ const Logo = () => {
 
   if (pathname === "/") {
     return (
-      <CustomButton linkTo="hero" additionalStyles="bg-slate-dark">
-        <figure className="flex items-center">
+      <CustomButton scrollTo="hero" additionalStyles="bg-slate-dark">
+        <figure className="flex items-end gap-2">
           <Image
             src="/logo-drink-icon.png"
-            width={43}
-            height={32}
+            width={25}
+            height={25}
             alt="Drink Icon"
+            className="object-contain"
           />
           <span className="base-24 font-serif text-light-200">
             COCKTAIL<span className="text-light-100">CORNER</span>
@@ -29,12 +30,13 @@ const Logo = () => {
 
   return (
     <Link href="/">
-      <figure className="flex items-center">
+      <figure className="flex items-end gap-2">
         <Image
           src="/logo-drink-icon.png"
-          width={43}
-          height={32}
+          width={25}
+          height={25}
           alt="Drink Icon"
+          className="object-contain"
         />
         <span className="base-24 font-serif text-light-200">
           COCKTAIL<span className="text-light-100">CORNER</span>

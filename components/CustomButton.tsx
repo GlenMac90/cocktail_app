@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 
 import { CustomButtonProps } from "@/types/drinks.index";
@@ -8,13 +9,14 @@ const CustomButton = ({
   additionalStyles,
   children,
   handleClick,
-  linkTo,
+  scrollTo,
+  link,
 }: CustomButtonProps) => {
-  if (linkTo) {
+  if (scrollTo) {
     return (
       <ScrollLink
         activeClass="active"
-        to={linkTo}
+        to={scrollTo}
         spy={true}
         smooth={true}
         offset={-100}
@@ -23,6 +25,17 @@ const CustomButton = ({
       >
         {children}
       </ScrollLink>
+    );
+  }
+
+  if (link) {
+    return (
+      <Link
+        href={link}
+        className={`flex-center bg-orange-light ${additionalStyles}`}
+      >
+        {children}
+      </Link>
     );
   }
 

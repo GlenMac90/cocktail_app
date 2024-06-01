@@ -1,11 +1,11 @@
 import ErrorGraphic from "@/components/ErrorGraphic";
 
-const NotFound = () => {
+const page = () => {
   return (
     <main className="screen-center">
-      <ErrorGraphic />
+      <ErrorGraphic errorPage />
     </main>
   );
 };
 
-export default NotFound;
+export default page;

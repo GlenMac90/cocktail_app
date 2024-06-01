@@ -47,6 +47,10 @@
     @apply text-[16px] leading-[17.6px] font-medium;
   }
 
+  .base-18 {
+    @apply text-[18px] leading-[25.2px];
+  }
+
   .medium-18 {
     @apply text-[16px] leading-[22.4px] sm:text-[18px] sm:leading-[25.2px] font-medium;
   }
@@ -89,5 +93,9 @@
 
   .orange-heading {
     @apply text-[14px] leading-[15.4px] sm:text-[16px] sm:leading-[17.6px] font-medium text-orange-light;
+  }
+
+  .screen-center {
+    @apply px-5 h-screen w-screen flex items-center justify-center text-center;
   }
 }
