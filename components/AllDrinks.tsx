@@ -38,7 +38,7 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
   const handleTitleChange = (newFilter: string) => {
     if (newFilter === filter) return;
     setFilter(newFilter as DrinksFilters);
-    updateStateAndFetch();
+    updateStateAndFetch(newFilter);
   };
 
   return (

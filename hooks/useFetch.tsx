@@ -24,7 +24,13 @@ const useFetch = ({
   const [fetching, setFetching] = useState<boolean>(false);
   const [filter, setFilter] = useState<DrinksFilters>("all");
 
-  const fetchMoreDrinks = async () => {
+  const fetchMoreDrinks = async ({
+    numberToSkip = skip,
+    newFilter = filter,
+  }: {
+    numberToSkip?: number;
+    newFilter?: DrinksFilters;
+  } = {}) => {
     if (!isMorePosts || fetching) return;
 
     try {
@@ -32,10 +38,10 @@ const useFetch = ({
 
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      const newDrinks = await fn({ skip, filter });
+      const newDrinks = await fn({ skip: numberToSkip, filter: newFilter });
       setDrinks((prevDrinks) => [...prevDrinks, ...newDrinks.drinks]);
       setIsMorePosts(newDrinks.isMorePosts);
-      setSkip((prevSkip) => prevSkip + newDrinks.drinks.length);
+      setSkip((prevSkip) => prevSkip + 9);
     } catch (error) {
       console.error("Error fetching more drinks", error);
     } finally {
@@ -43,11 +49,11 @@ const useFetch = ({
     }
   };
 
-  const updateStateAndFetch = async () => {
-    setSkip(0);
+  const updateStateAndFetch = async (filter: string) => {
     setDrinks([]);
     setIsMorePosts(true);
-    await fetchMoreDrinks();
+    setSkip(0);
+    fetchMoreDrinks({ numberToSkip: 0, newFilter: filter as DrinksFilters });
   };
 
   return {
