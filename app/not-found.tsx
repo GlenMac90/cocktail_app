@@ -1,8 +1,10 @@
+import ErrorGraphic from "@/components/ErrorGraphic";
+
 const NotFound = () => {
   return (
-    <div>
-      <p>404 - Page Not Found</p>
-    </div>
+    <main className="screen-center">
+      <ErrorGraphic />
+    </main>
   );
 };
 

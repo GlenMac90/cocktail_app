@@ -1,10 +1,12 @@
 "use client";
 
+import ErrorGraphic from "@/components/ErrorGraphic";
+
 const Error = () => {
   return (
-    <div>
-      <p>Error</p>
-    </div>
+    <main className="screen-center">
+      <ErrorGraphic errorPage />
+    </main>
   );
 };
 

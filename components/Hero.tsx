@@ -29,13 +29,13 @@ const Hero = () => {
           </h1>
           <CustomButton
             additionalStyles="mt-10 h-12 gap-2.5 bg-orange-light sm:h-16 xl:w-[17.375rem]"
-            linkTo="all-drinks"
+            scrollTo="all-drinks"
           >
             <span className="medium-20">Check Collections</span>
             <Image
               src="/icons/arrow-down.svg"
-              height={14}
-              width={14}
+              height={10}
+              width={10}
               alt="Arrow pointing down"
             />
           </CustomButton>

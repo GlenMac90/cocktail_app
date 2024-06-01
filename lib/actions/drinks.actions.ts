@@ -97,7 +97,7 @@ export async function getDrinkById(id: number): Promise<GetDrinkByIdType> {
     const similarDrinksJson = await popularDrinks.json();
 
     const formattedSimilarDrinks = similarDrinksJson.drinks
-      .slice(0, 6)
+      .slice(0, 10)
       .map((data: FullDrinkResponseType) => {
         return formatDrinksData({ data });
       });
