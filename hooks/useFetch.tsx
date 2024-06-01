@@ -1,9 +1,6 @@
-import { useState } from "react";
-import {
-  DrinkDataResponse,
-  DrinkData,
-  DrinksFilters,
-} from "@/types/drinks.index";
+import { useReducer } from "react";
+import { DrinkDataResponse, DrinksFilters } from "@/types/drinks.index";
+import { drinksReducer, initialState } from "@/reducers/drinksReducer";
 
 const useFetch = ({
   data,
@@ -18,45 +15,55 @@ const useFetch = ({
     filter: DrinksFilters;
   }) => Promise<DrinkDataResponse>;
 }) => {
-  const [drinks, setDrinks] = useState<DrinkData[]>(data.drinks);
-  const [isMorePosts, setIsMorePosts] = useState<boolean>(data.isMorePosts);
-  const [skip, setSkip] = useState<number>(data.skip);
-  const [fetching, setFetching] = useState<boolean>(false);
-  const [filter, setFilter] = useState<DrinksFilters>("all");
+  const [state, dispatch] = useReducer(drinksReducer, {
+    ...initialState,
+    drinks: data.drinks,
+    isMorePosts: data.isMorePosts,
+    skip: data.skip,
+  });
 
-  const fetchMoreDrinks = async () => {
-    if (!isMorePosts || fetching) return;
+  const fetchMoreDrinks = async ({
+    numberToSkip = state.skip,
+    newFilter = state.filter,
+  }: {
+    numberToSkip?: number;
+    newFilter?: DrinksFilters;
+  } = {}) => {
+    if (!state.isMorePosts || state.fetching) return;
 
     try {
-      setFetching(true);
+      dispatch({ type: "SET_FETCHING", payload: true });
 
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      const newDrinks = await fn({ skip, filter });
-      setDrinks((prevDrinks) => [...prevDrinks, ...newDrinks.drinks]);
-      setIsMorePosts(newDrinks.isMorePosts);
-      setSkip((prevSkip) => prevSkip + newDrinks.drinks.length);
+      const newDrinks = await fn({ skip: numberToSkip, filter: newFilter });
+      dispatch({
+        type: "SET_NEW_DRINKS",
+        payload: {
+          drinks: newDrinks.drinks,
+          isMorePosts: newDrinks.isMorePosts,
+          skip: numberToSkip + 9,
+        },
+      });
     } catch (error) {
       console.error("Error fetching more drinks", error);
     } finally {
-      setFetching(false);
+      dispatch({ type: "SET_FETCHING", payload: false });
     }
   };
 
-  const updateStateAndFetch = async () => {
-    setSkip(0);
-    setDrinks([]);
-    setIsMorePosts(true);
-    await fetchMoreDrinks();
+  const updateStateAndFetch = async (newFilter: string) => {
+    dispatch({
+      type: "RESET_AND_SET_FILTER",
+      payload: newFilter as DrinksFilters,
+    });
+    fetchMoreDrinks({ numberToSkip: 0, newFilter: newFilter as DrinksFilters });
   };
 
   return {
-    drinks,
-    isMorePosts,
-    fetching,
-    filter,
+    state,
+    dispatch,
     fetchMoreDrinks,
-    setFilter,
     updateStateAndFetch,
   };
 };

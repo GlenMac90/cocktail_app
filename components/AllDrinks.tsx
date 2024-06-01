@@ -13,19 +13,12 @@ import CustomButton from "./CustomButton";
 import HomePageFilters from "./HomePageFilters";
 
 const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
-  const {
-    drinks,
-    isMorePosts,
-    fetching,
-    fetchMoreDrinks,
-    setFilter,
-    updateStateAndFetch,
-    filter,
-  } = useFetch({
+  const { dispatch, state, fetchMoreDrinks, updateStateAndFetch } = useFetch({
     data,
     fn: getFilteredDrinks,
   });
   const { ref, inView } = useInView();
+  const { drinks, fetching, isMorePosts, filter } = state;
 
   useEffect(() => {
     if (inView && isMorePosts) fetchMoreDrinks();
@@ -37,8 +30,8 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
 
   const handleTitleChange = (newFilter: string) => {
     if (newFilter === filter) return;
-    setFilter(newFilter as DrinksFilters);
-    updateStateAndFetch();
+    dispatch({ type: "SET_FILTER", payload: newFilter as DrinksFilters });
+    updateStateAndFetch(newFilter);
   };
 
   return (
