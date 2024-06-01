@@ -47,14 +47,32 @@ export async function getDrinkByName(name: string): Promise<FullDrinkData> {
   }
 }
 
-export async function getDrinkById(id: number): Promise<FullDrinkData> {
+export type GetDrinkByIdType = {
+  drinkData: FullDrinkData;
+  similarDrinks: DrinkData[];
+};
+
+export async function getDrinkById(id: number): Promise<GetDrinkByIdType> {
   try {
     const response = await fetch(
       `${process.env.API_BASE_URL}lookup.php?i=${id}`
     );
     const responseJson = await response.json();
     const formattedData = formatFullDrinkData({ data: responseJson });
-    return formattedData;
+
+    const popularDrinks = await fetch(`${process.env.API_BASE_URL}popular.php`);
+    const similarDrinksJson = await popularDrinks.json();
+
+    const formattedSimilarDrinks = similarDrinksJson.drinks
+      .slice(0, 6)
+      .map((data: FullDrinkResponseType) => {
+        return formatDrinksData({ data });
+      });
+
+    return {
+      drinkData: formattedData,
+      similarDrinks: formattedSimilarDrinks,
+    };
   } catch (error) {
     throw new Error();
   }

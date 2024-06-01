@@ -5,7 +5,7 @@ import AllDrinks from "@/components/AllDrinks";
 export default async function Home() {
   const drinks = await getAllDrinks();
   return (
-    <main className="flex min-h-screen flex-col items-center pb-[6.25rem] pt-20 lg:pt-24 xl:pt-4">
+    <main className="flex min-h-screen flex-col items-center pb-[6.25rem] pt-24 xl:pt-4">
       <Hero />
       <AllDrinks data={drinks} />
     </main>
