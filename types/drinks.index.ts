@@ -99,3 +99,5 @@ export interface AccordionTemplateProps {
 export type AccordionDataType = { title: string; items: string[] };
 
 export type DrinkKeys = `strIngredient${number}` | `strMeasure${number}`;
+
+export type DrinksFilters = "all" | "popular" | "latest" | "non-alcoholic";

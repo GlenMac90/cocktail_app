@@ -5,8 +5,41 @@ import {
   FullDrinkData,
   DrinkData,
   DrinkDataResponse,
+  DrinksFilters,
 } from "@/types/drinks.index";
 import { formatFullDrinkData, formatDrinksData } from "@/utils";
+import { drinksChoices } from "@/constants";
+
+export async function getFilteredDrinks({
+  skip = 0,
+  filter,
+}: {
+  skip?: number;
+  filter: DrinksFilters;
+}): Promise<DrinkDataResponse> {
+  const drink = drinksChoices.find((choice) => choice.filter === filter);
+  const suffix = drink?.suffix ?? drinksChoices[0].suffix;
+
+  try {
+    const response = await fetch(`${process.env.API_BASE_URL}${suffix}`);
+    const responseJson = await response.json();
+    const formattedData = responseJson.drinks.map(
+      (data: FullDrinkResponseType) => {
+        return formatDrinksData({ data });
+      }
+    );
+
+    const isMorePosts = formattedData.length > skip + 9;
+
+    return {
+      drinks: formattedData.slice(skip, skip + 9),
+      isMorePosts,
+      skip: skip + 9,
+    };
+  } catch (error) {
+    throw new Error();
+  }
+}
 
 export async function getAllDrinks(
   skip: number = 0
