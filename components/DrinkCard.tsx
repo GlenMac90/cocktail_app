@@ -22,7 +22,7 @@ const DrinkCard = ({ drink, delay }: { drink: DrinkData; delay?: number }) => {
         className="rounded bg-gradient-to-b from-slate-light to-slate-mid p-5"
       >
         <Link
-          href={`/drink/${drink.id}`}
+          href={`/drink/${drink.name}`}
           key={drink.id}
           className="flex flex-col gap-6"
         >
@@ -42,7 +42,7 @@ const DrinkCard = ({ drink, delay }: { drink: DrinkData; delay?: number }) => {
   }
   return (
     <Link
-      href={`/drink/${drink.id}`}
+      href={`/drink/${drink.name}`}
       key={drink.id}
       className="rounded bg-gradient-to-b from-slate-light to-slate-mid p-5"
     >
