@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import CustomButton from "./CustomButton";
 
@@ -11,7 +12,13 @@ const Hero = () => {
       className="flex w-full justify-center overflow-hidden bg-[url('/hero-background.png')] bg-cover px-5 lg:px-[6.25rem]"
     >
       <div className="homepage-content-max-width flex w-full flex-col items-center xl:flex-row ">
-        <div className="mb-10 flex w-full flex-col xl:max-w-3xl xl:shrink-0">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-10 flex w-full flex-col xl:max-w-3xl xl:shrink-0"
+        >
           <p className="base-20 self-center text-light-100 xl:self-start">
             Beverages for connoisseurs
           </p>
@@ -32,16 +39,23 @@ const Hero = () => {
               alt="Arrow pointing down"
             />
           </CustomButton>
-        </div>
-        <figure className="flex h-fit w-full max-w-xl shrink-0 items-end xl:mt-20">
+        </motion.div>
+        <motion.figure
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="flex h-fit w-full max-w-xl shrink-0 items-end xl:mt-20"
+        >
           <Image
+            priority
             src="/drinks-graphic.png"
             alt="A refreshing orange cocktail in a glass"
             height={618}
             width={600}
             className="object-contain"
           />
-        </figure>
+        </motion.figure>
       </div>
     </header>
   );
