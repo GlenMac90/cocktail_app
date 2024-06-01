@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans as IBMPlexSans } from "next/font/google";
 import "./globals.css";
 
+import Navbar from "@/components/Navbar";
+
 const plexSans = IBMPlexSans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -21,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${plexSans.className} overscroll-none bg-slate-dark`}>
+        <Navbar />
         {children}
       </body>
     </html>

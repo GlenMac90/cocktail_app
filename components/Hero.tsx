@@ -10,7 +10,7 @@ const Hero = () => {
   };
   return (
     <header className="flex w-full justify-center overflow-hidden bg-[url('/hero-background.png')] bg-cover px-5 lg:px-[6.25rem]">
-      <div className="page-content-max-width flex w-full flex-col items-center xl:flex-row ">
+      <div className="homepage-content-max-width flex w-full flex-col items-center xl:flex-row ">
         <div className="mb-10 flex w-full flex-col xl:max-w-3xl xl:shrink-0">
           <p className="base-20 self-center text-light-100 xl:self-start">
             Beverages for connoisseurs
