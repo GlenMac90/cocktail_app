@@ -11,7 +11,7 @@ import { ChevronDown } from "lucide-react";
 
 import { drinksChoices } from "@/constants";
 import { DrinksFilters } from "@/types/drinks.index";
-import CustomButton from "./CustomButton";
+import CustomButton from "../CustomButton";
 
 const HomePageFilters = ({
   handleTitleChange,

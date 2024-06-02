@@ -1,4 +1,4 @@
-import LoadingGraphic from "@/components/LoadingGraphic";
+import LoadingGraphic from "@/components/graphics/LoadingGraphic";
 
 const Loading = () => {
   return (

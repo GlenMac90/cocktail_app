@@ -1,4 +1,4 @@
-import ErrorGraphic from "@/components/ErrorGraphic";
+import ErrorGraphic from "@/components/graphics/ErrorGraphic";
 
 const NotFound = () => {
   return (

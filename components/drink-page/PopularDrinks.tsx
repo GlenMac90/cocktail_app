@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/carousel";
 
 import { DrinkData } from "@/types/drinks.index";
-import DrinkCard from "./DrinkCard";
+import DrinkCard from "../DrinkCard";
 
 const PopularDrinks = ({ drinks }: { drinks: DrinkData[] }) => {
   return (

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import CustomButton from "./CustomButton";
+import CustomButton from "../CustomButton";
 
 const LogoContent = () => {
   return (

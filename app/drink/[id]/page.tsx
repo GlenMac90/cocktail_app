@@ -1,10 +1,10 @@
-import AccordionTemplate from "@/components/AccordionTemplate";
+import AccordionTemplate from "@/components/drink-page/AccordionTemplate";
 import Tag from "@/components/Tag";
 import { getDrinkById } from "@/lib/actions/drinks.actions";
 import { AccordionDataType } from "@/types/drinks.index";
-import PopularDrinks from "@/components/PopularDrinks";
-import DrinkPageImage from "@/components/DrinkPageImage";
-import DrinkInfo from "@/components/DrinkInfo";
+import PopularDrinks from "@/components/drink-page/PopularDrinks";
+import DrinkPageImage from "@/components/drink-page/DrinkPageImage";
+import DrinkInfo from "@/components/drink-page/DrinkInfo";
 
 const Drink = async ({ params }: { params: { id: string } }) => {
   const drink = await getDrinkById(+params.id);

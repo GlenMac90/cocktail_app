@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 import { FullDrinkData } from "@/types/drinks.index";
-import Tag from "./Tag";
+import Tag from "../Tag";
 
 const DrinkInfo = ({ data }: { data: FullDrinkData }) => {
   const { name, glassType, category } = data;
