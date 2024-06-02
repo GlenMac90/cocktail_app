@@ -10,6 +10,7 @@ Cocktail Explorer is a mobile application that allows users to browse a list of 
 - [Usage](#usage)
 - [API Reference](#api-reference)
 - [Features](#features)
+- [Design Patterns](#design-patterns)
 - [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 - [Contact Information](#contact-information)
@@ -115,6 +116,8 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 ## Features
 
+<img src="public/features.jpeg" alt="Banner Image for The Cocktail Corner" width="300">
+
 **Homepage Drink List** - Displays a comprehensive list of drinks, featuring images and names.
 
 **Dynamic Drink Details** - Each drink has a detailed page for more information, including ingredients, measurements, and preparation instructions.
@@ -128,6 +131,20 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 **Custom Animations** - Custom animations are featured throughout the application using Framer Motion.
 
 **ShadCN components** - Highly customisable pre built components are featured throught the app.
+
+## Design Patterns
+
+<img src="public/design-patterns.jpeg" alt="Banner Image for The Cocktail Corner" width="300">
+
+**Maintainability** - I have tried to keep components modular and scalable and dynamic, with an emphasis on reusability and readability.
+
+**Server fetching and formatting** - I am handling fetching and formatting of data on the backend, allowing for tsx components to render data without unnecessary logic or formatting on the front end. I have achieved this by creating dynamic helper functions that process and reformat the data.
+
+**Dynamic fetch function** - I have created two highly flexible server functions to handle all the data fetching necessary for the application.
+
+**Type Safety** - The use of types and interfaces is constant throughout the app, without a single use of the word 'any' to override the type check.
+
+**File and folder structure** - The app is organised to seperate components based on their role, as well as separating types, utils, server functions and constants.
 
 ## Screenshots
 

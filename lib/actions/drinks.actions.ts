@@ -39,33 +39,6 @@ export async function getFilteredDrinks({
   }
 }
 
-export async function getAllDrinks(
-  skip: number = 0
-): Promise<DrinkDataResponse> {
-  try {
-    const response = await fetch(
-      `${process.env.API_BASE_URL}filter.php?c=Ordinary_Drink`
-    );
-    const responseJson = await response.json();
-    const formattedData = responseJson.drinks.map(
-      (data: FullDrinkResponseType) => {
-        return formatDrinksData({ data });
-      }
-    );
-
-    const isMorePosts = formattedData.length > skip + 9;
-
-    return {
-      drinks: formattedData.slice(skip, skip + 9),
-      isMorePosts,
-      skip: skip + 9,
-    };
-  } catch (error) {
-    console.error(error);
-    throw new Error();
-  }
-}
-
 export async function getDrinkById(id: number): Promise<GetDrinkByNameType> {
   try {
     const response = await fetch(
