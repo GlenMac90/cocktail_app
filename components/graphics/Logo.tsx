@@ -8,7 +8,7 @@ import CustomButton from "../CustomButton";
 
 const LogoContent = () => {
   return (
-    <figure className="flex h-[2.3rem] items-end gap-2">
+    <figure className="flex h-[2.3rem] items-end gap-2 bg-slate-dark">
       <Image
         src="/logo-drink-icon.png"
         width={25}

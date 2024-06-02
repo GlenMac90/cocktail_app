@@ -10,16 +10,13 @@ import {
 import { ChevronDown } from "lucide-react";
 
 import { drinksChoices } from "@/constants";
-import { DrinksFilters } from "@/types/drinks.index";
+import { DrinksFilters, HomePageFiltersProps } from "@/types/drinks.index";
 import CustomButton from "../CustomButton";
 
 const HomePageFilters = ({
   handleTitleChange,
   filter,
-}: {
-  handleTitleChange: (filter: DrinksFilters) => void;
-  filter: DrinksFilters;
-}) => {
+}: HomePageFiltersProps) => {
   const selectedChoice = drinksChoices.find(
     (choice) => choice.filter === filter
   );

@@ -13,7 +13,7 @@ import { AccordionDataType } from "@/types/drinks.index";
 
 const AccordionTemplate = ({ data }: { data: AccordionDataType[] }) => {
   return (
-    <div className="xl:mt-10">
+    <li className="xl:mt-10">
       <Accordion
         type="single"
         collapsible
@@ -58,7 +58,7 @@ const AccordionTemplate = ({ data }: { data: AccordionDataType[] }) => {
           );
         })}
       </Accordion>
-    </div>
+    </li>
   );
 };
 

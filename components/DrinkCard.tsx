@@ -4,17 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { DrinkData } from "@/types/drinks.index";
+import { DrinkCardProps } from "@/types/drinks.index";
 
-const DrinkCard = ({
-  drink,
-  delay,
-  index,
-}: {
-  drink: DrinkData;
-  delay?: number;
-  index: number;
-}) => {
+const DrinkCard = ({ drink, delay, index }: DrinkCardProps) => {
   if (delay) {
     return (
       <motion.figure

@@ -1,7 +1,7 @@
-import AccordionTemplate from "@/components/drink-page/AccordionTemplate";
-import Tag from "@/components/Tag";
 import { getDrinkById } from "@/lib/actions/drinks.actions";
 import { AccordionDataType } from "@/types/drinks.index";
+import AccordionTemplate from "@/components/drink-page/AccordionTemplate";
+import Tag from "@/components/Tag";
 import PopularDrinks from "@/components/drink-page/PopularDrinks";
 import DrinkPageImage from "@/components/drink-page/DrinkPageImage";
 import DrinkInfo from "@/components/drink-page/DrinkInfo";
