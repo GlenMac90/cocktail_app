@@ -45,7 +45,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="flex h-fit w-full max-w-lg shrink-0 items-end xl:mt-20"
+          className="flex h-fit w-full max-w-[35rem] shrink-0 items-end xl:mt-20"
         >
           <Image
             priority
