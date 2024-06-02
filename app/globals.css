@@ -80,11 +80,11 @@
   }
 
   .serif-heading {
-    @apply text-[40px] leading-[40px] font-serif text-light-100;
+    @apply text-[40px] leading-[40px] font-serif;
   }
 
   .hero-heading {
-    @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] lg:text-[80px] lg:leading-[80px] font-serif mt-5 text-center text-light-100 xl:text-start;
+    @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] lg:text-[80px] lg:leading-[80px] font-serif mt-5 text-center  xl:text-start;
   }
 
   .homepage-content-max-width {
@@ -104,6 +104,6 @@
   }
 
   .custom-button {
-    @apply cursor-pointer bg-orange-light transition duration-200 hover:opacity-80;
+    @apply cursor-pointer transition duration-200 hover:opacity-80;
   }
 }

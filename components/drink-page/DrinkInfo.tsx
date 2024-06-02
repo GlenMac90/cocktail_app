@@ -21,7 +21,7 @@ const DrinkInfo = ({ data }: { data: FullDrinkData }) => {
           {category && <Tag title={category} />}
         </div>
       )}
-      <h3 className="semibold-40 mt-5 text-light-100">{name}</h3>
+      <h3 className="semibold-40 mt-5 ">{name}</h3>
     </motion.div>
   );
 };

@@ -28,7 +28,7 @@ const Drink = async ({ params }: { params: { id: string } }) => {
               {category && <Tag title={category} />}
             </div>
           )}
-          <h3 className="semibold-40 mt-5 text-light-100">{name}</h3>
+          <h3 className="semibold-40 mt-5 ">{name}</h3>
         </div>
         <DrinkPageImage data={drink.drinkData} />
         <aside className="flex w-full flex-col xl:pl-[3.75rem] xl:pt-5">

@@ -36,9 +36,7 @@ const DrinkCard = ({ drink, delay, index }: DrinkCardProps) => {
             className="size-full shrink-0 rounded object-contain"
           />
           <figcaption>
-            <h4 className=" semibold-24 text-center text-light-100">
-              {drink.name}
-            </h4>
+            <h4 className=" semibold-24 text-center ">{drink.name}</h4>
           </figcaption>
         </Link>
       </motion.figure>
@@ -61,7 +59,7 @@ const DrinkCard = ({ drink, delay, index }: DrinkCardProps) => {
           className="w-full rounded object-contain"
         />
         <figcaption>
-          <h4 className="semibold-24 text-light-100">{drink.name}</h4>
+          <h4 className="semibold-24 ">{drink.name}</h4>
         </figcaption>
       </figure>
     </Link>

@@ -17,7 +17,7 @@ const LogoContent = () => {
         className="object-contain"
       />
       <span className="base-24 font-serif text-light-200">
-        COCKTAIL<span className="text-light-100">CORNER</span>
+        COCKTAIL<span className="">CORNER</span>
       </span>
     </figure>
   );

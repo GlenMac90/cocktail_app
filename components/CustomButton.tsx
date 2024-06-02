@@ -22,7 +22,10 @@ const CustomButton = ({
         smooth={true}
         offset={-100}
         duration={500}
-        className={cn("flex-center custom-button", additionalStyles)}
+        className={cn(
+          "flex-center custom-button text-slate-dark",
+          additionalStyles
+        )}
       >
         {children}
       </ScrollLink>
@@ -33,7 +36,10 @@ const CustomButton = ({
     return (
       <Link
         href={link}
-        className={cn("flex-center custom-button", additionalStyles)}
+        className={cn(
+          "flex-center custom-button text-slate-dark",
+          additionalStyles
+        )}
       >
         {children}
       </Link>
@@ -41,10 +47,7 @@ const CustomButton = ({
   }
 
   return (
-    <button
-      className={`custom-button ${additionalStyles}`}
-      onClick={handleClick}
-    >
+    <button className={additionalStyles} onClick={handleClick}>
       {children}
     </button>
   );

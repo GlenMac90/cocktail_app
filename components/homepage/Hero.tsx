@@ -19,7 +19,7 @@ const Hero = () => {
           viewport={{ once: true }}
           className="mb-10 flex w-full flex-col xl:max-w-[44rem] xl:shrink-0 xl:pt-10"
         >
-          <p className="base-20 self-center text-light-100 xl:self-start">
+          <p className="base-20 self-center  xl:self-start">
             Beverages for connoisseurs
           </p>
           <h1 className="hero-heading">

@@ -35,7 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("overscroll-none bg-slate-dark", plexSans.className)}>
+      <body
+        className={cn(
+          "overscroll-none bg-slate-dark text-light-100",
+          plexSans.className
+        )}
+      >
         <Navbar />
         {children}
       </body>
