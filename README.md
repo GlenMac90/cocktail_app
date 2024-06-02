@@ -146,6 +146,8 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 **File and folder structure** - The app is organised to seperate components based on their role, as well as separating types, utils, server functions and constants.
 
+**Saving and committing work often** - I regularly made commits and pull requests to github using a total of 36 pull requests with clear commit messages. This keeps the project organised and allows me to work on tasks without altering the main codebase.
+
 ## Screenshots
 
 ### Multiple filtering options
