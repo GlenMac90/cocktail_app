@@ -6,7 +6,15 @@ import { motion } from "framer-motion";
 
 import { DrinkData } from "@/types/drinks.index";
 
-const DrinkCard = ({ drink, delay }: { drink: DrinkData; delay?: number }) => {
+const DrinkCard = ({
+  drink,
+  delay,
+  index,
+}: {
+  drink: DrinkData;
+  delay?: number;
+  index: number;
+}) => {
   if (delay) {
     return (
       <motion.figure
@@ -22,16 +30,18 @@ const DrinkCard = ({ drink, delay }: { drink: DrinkData; delay?: number }) => {
         className="rounded bg-gradient-to-b from-slate-light to-slate-mid p-5"
       >
         <Link
-          href={`/drink/${drink.apiId}`}
-          key={drink.apiId}
+          href={`/drink/${drink.id}`}
+          key={drink.id}
           className="flex flex-col gap-6"
         >
           <Image
             src={drink.image}
-            height={305}
+            height={354}
             width={354}
+            blurDataURL={`/fallback/blur-drink-${index}.png`}
+            placeholder="blur"
             alt="Drink Image"
-            className="w-full rounded object-contain"
+            className="size-full shrink-0 rounded object-contain"
           />
           <figcaption>
             <h4 className=" semibold-24 text-center text-light-100">
@@ -44,16 +54,18 @@ const DrinkCard = ({ drink, delay }: { drink: DrinkData; delay?: number }) => {
   }
   return (
     <Link
-      href={`/drink/${drink.apiId}`}
-      key={drink.apiId}
+      href={`/drink/${drink.id}`}
+      key={drink.id}
       className="w-full rounded bg-gradient-to-b from-slate-light to-slate-mid p-5"
     >
       <figure className="flex flex-col gap-6">
         <Image
           src={drink.image}
-          height={305}
+          height={354}
           width={354}
           alt="Drink Image"
+          blurDataURL={`/fallback/blur-drink-${index}.png`}
+          placeholder="blur"
           className="w-full rounded object-contain"
         />
         <figcaption>

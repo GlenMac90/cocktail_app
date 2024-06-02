@@ -72,7 +72,7 @@ export type FullDrinkData = {
 };
 
 export type DrinkData = {
-  apiId: string;
+  id: string;
   name: string;
   image: string;
 };

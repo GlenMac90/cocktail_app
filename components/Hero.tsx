@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <header
       id="hero"
-      className="flex w-full justify-center overflow-hidden bg-[url('/hero-background.png')] bg-cover px-5 lg:px-[6.25rem]"
+      className="flex w-full justify-center overflow-hidden bg-[url('/hero-background.png')] bg-cover px-5 lg:px-[6.25rem] xl:pt-20"
     >
       <div className="homepage-content-max-width flex w-full flex-col items-center xl:flex-row ">
         <motion.div
@@ -17,7 +17,7 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-10 flex w-full flex-col xl:max-w-[44rem] xl:shrink-0"
+          className="mb-10 flex w-full flex-col xl:max-w-[44rem] xl:shrink-0 xl:pt-10"
         >
           <p className="base-20 self-center text-light-100 xl:self-start">
             Beverages for connoisseurs
@@ -45,7 +45,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="flex h-fit w-full max-w-xl shrink-0 items-end xl:mt-20"
+          className="flex h-fit w-full max-w-lg shrink-0 items-end xl:mt-20"
         >
           <Image
             priority

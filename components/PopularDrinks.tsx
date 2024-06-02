@@ -25,12 +25,12 @@ const PopularDrinks = ({ drinks }: { drinks: DrinkData[] }) => {
 
       <Carousel className="relative flex">
         <CarouselContent>
-          {drinks.map((drink: DrinkData) => (
+          {drinks.map((drink: DrinkData, index: number) => (
             <CarouselItem
-              key={drink.apiId}
+              key={drink.id}
               className="flex w-full sm:basis-1/2 xl:basis-1/3"
             >
-              <DrinkCard drink={drink} />
+              <DrinkCard drink={drink} index={index + 1} />
             </CarouselItem>
           ))}
         </CarouselContent>
