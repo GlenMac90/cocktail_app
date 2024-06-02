@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { IBM_Plex_Sans as IBMPlexSans } from "next/font/google";
-import "./globals.css";
 
+import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { cn } from "@/lib/utils";
 
 const plexSans = IBMPlexSans({
   subsets: ["latin"],
@@ -34,7 +35,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${plexSans.className} overscroll-none bg-slate-dark`}>
+      <body
+        className={cn(
+          "overscroll-none bg-slate-dark text-light-100",
+          plexSans.className
+        )}
+      >
         <Navbar />
         {children}
       </body>

@@ -2,10 +2,10 @@
 
 import {
   FullDrinkResponseType,
-  FullDrinkData,
   DrinkData,
   DrinkDataResponse,
-  DrinksFilters,
+  fetchFunctionProps,
+  GetDrinkByNameType,
 } from "@/types/drinks.index";
 import { formatFullDrinkData, formatDrinksData } from "@/utils";
 import { drinksChoices } from "@/constants";
@@ -13,10 +13,7 @@ import { drinksChoices } from "@/constants";
 export async function getFilteredDrinks({
   skip = 0,
   filter,
-}: {
-  skip?: number;
-  filter: DrinksFilters;
-}): Promise<DrinkDataResponse> {
+}: fetchFunctionProps): Promise<DrinkDataResponse> {
   const drink = drinksChoices.find((choice) => choice.filter === filter);
   const suffix = drink?.suffix ?? drinksChoices[0].suffix;
 
@@ -68,11 +65,6 @@ export async function getAllDrinks(
     throw new Error();
   }
 }
-
-export type GetDrinkByNameType = {
-  drinkData: FullDrinkData;
-  similarDrinks: DrinkData[];
-};
 
 export async function getDrinkById(id: number): Promise<GetDrinkByNameType> {
   try {

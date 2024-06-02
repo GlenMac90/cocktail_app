@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 
 import { CustomButtonProps } from "@/types/drinks.index";
+import { cn } from "@/lib/utils";
 
 const CustomButton = ({
   additionalStyles,
@@ -21,7 +22,10 @@ const CustomButton = ({
         smooth={true}
         offset={-100}
         duration={500}
-        className={`flex-center custom-button ${additionalStyles}`}
+        className={cn(
+          "flex-center custom-button text-slate-dark",
+          additionalStyles
+        )}
       >
         {children}
       </ScrollLink>
@@ -32,7 +36,10 @@ const CustomButton = ({
     return (
       <Link
         href={link}
-        className={`flex-center custom-button ${additionalStyles}`}
+        className={cn(
+          "flex-center custom-button text-slate-dark",
+          additionalStyles
+        )}
       >
         {children}
       </Link>
@@ -40,10 +47,7 @@ const CustomButton = ({
   }
 
   return (
-    <button
-      className={`custom-button ${additionalStyles}`}
-      onClick={handleClick}
-    >
+    <button className={additionalStyles} onClick={handleClick}>
       {children}
     </button>
   );

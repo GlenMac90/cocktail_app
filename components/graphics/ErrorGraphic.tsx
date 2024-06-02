@@ -14,10 +14,10 @@ const ErrorGraphic = ({ errorPage }: { errorPage?: boolean }) => {
 Loading graphic of two wind glasses clinking together
     "
       />
-      <h2 className="semibold-40 text-light-100">
+      <h2 className="semibold-40 ">
         {errorPage ? "Oops! Something Went Wrong" : "Oops! Cocktail Not Found"}
       </h2>
-      <p className="base-18 my-6 text-light-100">
+      <p className="base-18 my-6 ">
         We can&apos;t find that cocktail recipe. Head back to explore more tasty
         options.
       </p>

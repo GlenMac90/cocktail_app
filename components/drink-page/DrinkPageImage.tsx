@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+
 import { FullDrinkData } from "@/types/drinks.index";
 
 const DrinkPageImage = ({ data }: { data: FullDrinkData }) => {
@@ -9,7 +10,7 @@ const DrinkPageImage = ({ data }: { data: FullDrinkData }) => {
     <motion.figure
       initial={{ opacity: 0, x: -30 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, delay: 0.7 }}
+      transition={{ duration: 1, delay: 0.4 }}
       viewport={{ once: true }}
       className="flex w-full items-start xl:w-[70%]"
     >

@@ -21,7 +21,7 @@ const PopularDrinks = ({ drinks }: { drinks: DrinkData[] }) => {
       viewport={{ once: true }}
       className="homepage-content-max-width flex w-full flex-col gap-[1.875rem] xl:gap-[3.125rem]"
     >
-      <h2 className="serif-heading text-light-100">Popular Drinks</h2>
+      <h2 className="serif-heading ">Popular Drinks</h2>
 
       <Carousel className="relative flex">
         <CarouselContent>
@@ -34,8 +34,8 @@ const PopularDrinks = ({ drinks }: { drinks: DrinkData[] }) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="absolute left-3 z-10" />
-        <CarouselNext className="absolute right-3 z-10" />
+        <CarouselPrevious className="absolute left-3 z-10 bg-light-100 text-slate-dark" />
+        <CarouselNext className="absolute right-3 z-10 bg-light-100 text-slate-dark" />
         <div className="absolute right-0 h-full w-4 bg-gradient-to-r from-transparent to-slate-dark" />
         <div className="absolute left-0 h-full w-4 bg-gradient-to-l from-transparent to-slate-dark" />
       </Carousel>

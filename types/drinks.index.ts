@@ -102,3 +102,24 @@ export type AccordionDataType = { title: string; items: string[] };
 export type DrinkKeys = `strIngredient${number}` | `strMeasure${number}`;
 
 export type DrinksFilters = "all" | "popular" | "latest" | "non-alcoholic";
+
+export interface HomePageFiltersProps {
+  handleTitleChange: (filter: DrinksFilters) => void;
+  filter: DrinksFilters;
+}
+
+export interface DrinkCardProps {
+  drink: DrinkData;
+  delay?: number;
+  index: number;
+}
+
+export interface fetchFunctionProps {
+  skip?: number;
+  filter: DrinksFilters;
+}
+
+export type GetDrinkByNameType = {
+  drinkData: FullDrinkData;
+  similarDrinks: DrinkData[];
+};

@@ -4,17 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import { DrinkData } from "@/types/drinks.index";
+import { DrinkCardProps } from "@/types/drinks.index";
 
-const DrinkCard = ({
-  drink,
-  delay,
-  index,
-}: {
-  drink: DrinkData;
-  delay?: number;
-  index: number;
-}) => {
+const DrinkCard = ({ drink, delay, index }: DrinkCardProps) => {
   if (delay) {
     return (
       <motion.figure
@@ -44,9 +36,7 @@ const DrinkCard = ({
             className="size-full shrink-0 rounded object-contain"
           />
           <figcaption>
-            <h4 className=" semibold-24 text-center text-light-100">
-              {drink.name}
-            </h4>
+            <h4 className=" semibold-24 text-center ">{drink.name}</h4>
           </figcaption>
         </Link>
       </motion.figure>
@@ -69,7 +59,7 @@ const DrinkCard = ({
           className="w-full rounded object-contain"
         />
         <figcaption>
-          <h4 className="semibold-24 text-light-100">{drink.name}</h4>
+          <h4 className="semibold-24 ">{drink.name}</h4>
         </figcaption>
       </figure>
     </Link>

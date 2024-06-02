@@ -1,5 +1,10 @@
 import { useReducer } from "react";
-import { DrinkDataResponse, DrinksFilters } from "@/types/drinks.index";
+
+import {
+  DrinkDataResponse,
+  DrinksFilters,
+  fetchFunctionProps,
+} from "@/types/drinks.index";
 import { drinksReducer, initialState } from "@/reducers/drinksReducer";
 
 const useFetch = ({
@@ -7,13 +12,7 @@ const useFetch = ({
   fn,
 }: {
   data: DrinkDataResponse;
-  fn: ({
-    skip,
-    filter,
-  }: {
-    skip?: number;
-    filter: DrinksFilters;
-  }) => Promise<DrinkDataResponse>;
+  fn: ({ skip, filter }: fetchFunctionProps) => Promise<DrinkDataResponse>;
 }) => {
   const [state, dispatch] = useReducer(drinksReducer, {
     ...initialState,
