@@ -132,6 +132,8 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 **ShadCN components** - Highly customisable pre built components are featured throught the app.
 
+**Simulated Database Response** - I have intentional made the API fetch the data slower to simulate a database and to show user feedback as well as showcasing loading and fetching states.
+
 ## Design Patterns
 
 <img src="public/design-patterns.jpeg" alt="Banner Image for The Cocktail Corner" width="300">
