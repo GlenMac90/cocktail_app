@@ -34,7 +34,9 @@ const DrinkCard = ({ drink, delay }: { drink: DrinkData; delay?: number }) => {
             className="w-full rounded object-contain"
           />
           <figcaption>
-            <h4 className="semibold-24 text-light-100">{drink.name}</h4>
+            <h4 className=" semibold-24 text-center text-light-100">
+              {drink.name}
+            </h4>
           </figcaption>
         </Link>
       </motion.figure>

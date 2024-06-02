@@ -38,7 +38,7 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
     <section className="flex w-full justify-center px-5 xl:px-[6.25rem]">
       <div
         id="all-drinks"
-        className="homepage-content-max-width mt-12 flex w-full flex-col gap-[1.875rem] xl:mt-[3.75rem] xl:gap-[3.125rem]"
+        className="homepage-content-max-width mt-12 flex w-full flex-col gap-[1.875rem] xl:mt-[3.75rem] xl:min-h-[110rem] xl:gap-[3.125rem]"
       >
         <HomePageFilters
           handleTitleChange={handleTitleChange}

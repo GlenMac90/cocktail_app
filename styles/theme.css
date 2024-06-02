@@ -43,6 +43,10 @@
     @apply text-[12px] leading-[13.2px] font-medium;
   }
 
+  .base-14 {
+    @apply text-[14px] leading-[15.4px];
+  }
+
   .medium-16 {
     @apply text-[16px] leading-[17.6px] font-medium;
   }
@@ -80,11 +84,11 @@
   }
 
   .hero-heading {
-    @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] lg:text-[88px] lg:leading-[88px] font-serif mt-5 text-center text-light-100 xl:text-start;
+    @apply text-[48px] leading-[48px] sm:text-[60px] sm:leading-[60px] lg:text-[80px] lg:leading-[80px] font-serif mt-5 text-center text-light-100 xl:text-start;
   }
 
   .homepage-content-max-width {
-    @apply max-w-3xl xl:max-w-[90rem];
+    @apply max-w-3xl xl:max-w-[77.5rem];
   }
 
   .drinkpage-content-max-width {
@@ -97,5 +101,9 @@
 
   .screen-center {
     @apply px-5 h-screen w-screen flex items-center justify-center text-center;
+  }
+
+  .custom-button {
+    @apply cursor-pointer bg-orange-light transition duration-200 hover:opacity-80;
   }
 }
