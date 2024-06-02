@@ -5,8 +5,8 @@ const NoMoreDrinks = () => {
     <figure className="flex flex-col items-center gap-4">
       <Image
         src="/no-more-drinks.png"
-        height={220}
-        width={220}
+        height={180}
+        width={180}
         alt="
     A graphic of a spilling cocktail glass, indicating no more drinks are available
         "
