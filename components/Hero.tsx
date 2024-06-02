@@ -17,7 +17,7 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-10 flex w-full flex-col xl:max-w-3xl xl:shrink-0"
+          className="mb-10 flex w-full flex-col xl:max-w-[44rem] xl:shrink-0"
         >
           <p className="base-20 self-center text-light-100 xl:self-start">
             Beverages for connoisseurs
