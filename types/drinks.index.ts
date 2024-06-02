@@ -64,7 +64,7 @@ export type SmallDrinkResponseType = {
 export type FullDrinkData = {
   name: string;
   image: string | null;
-  instructions: string;
+  instructions: string[];
   glassType: string;
   category: string;
   ingredients: string[];

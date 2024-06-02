@@ -12,14 +12,14 @@ export const getListOfItems = ({
   data: FullDrinkResponseType;
   key: "strIngredient" | "strMeasure";
 }): string[] => {
-  const ingredients: string[] = [];
+  const list: string[] = [];
   for (let i = 1; i <= 15; i++) {
-    const ingredient = data[`${key}${i}` as DrinkKeys];
-    if (ingredient) {
-      ingredients.push(ingredient);
+    const item = data[`${key}${i}` as DrinkKeys];
+    if (item) {
+      list.push(item);
     }
   }
-  return ingredients;
+  return list;
 };
 
 export const formatFullDrinkData = ({
@@ -30,10 +30,13 @@ export const formatFullDrinkData = ({
   const drinkData = data.drinks[0];
   const ingredients = getListOfItems({ data: drinkData, key: "strIngredient" });
   const measures = getListOfItems({ data: drinkData, key: "strMeasure" });
+  const instructionsArray = drinkData.strInstructions.split(".");
+  const instructions = instructionsArray.map((instruction) => instruction);
+
   return {
     name: drinkData.strDrink,
     image: drinkData.strDrinkThumb,
-    instructions: drinkData.strInstructions,
+    instructions,
     glassType: drinkData.strGlass,
     category: drinkData.strCategory,
     ingredients,

@@ -14,7 +14,7 @@ const Drink = async ({ params }: { params: { id: string } }) => {
 
   const accordionData: AccordionDataType[] = [
     { title: "INGREDIENTS", items: ingredients },
-    { title: "INSTRUCTIONS", items: [instructions] },
+    { title: "INSTRUCTIONS", items: instructions },
     { title: "GLASS", items: [glassType] },
   ];
 
