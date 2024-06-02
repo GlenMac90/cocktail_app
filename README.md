@@ -197,4 +197,4 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 ### Thank you for reading
 
-I am really grateful for you time and I hope you like what you see here.
+I am really grateful for your time and I hope you like what you see here.
