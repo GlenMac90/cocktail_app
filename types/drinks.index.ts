@@ -83,43 +83,68 @@ export type DrinkDataResponse = {
   skip: number;
 };
 
-export interface CustomButtonProps {
+export type CustomButtonProps = {
   additionalStyles?: string;
   children: React.ReactNode;
   handleClick?: () => void;
   scrollTo?: string;
   link?: string;
-}
+};
 
-export interface AccordionTemplateProps {
+export type AccordionTemplateProps = {
   data: string[];
   title: string;
   open?: boolean;
-}
+};
 
 export type AccordionDataType = { title: string; items: string[] };
 
-export type DrinkKeys = `strIngredient${number}` | `strMeasure${number}`;
+export type DrinkKey = `strIngredient${number}` | `strMeasure${number}`;
 
-export type DrinksFilters = "all" | "popular" | "latest" | "non-alcoholic";
+export type DrinksFilter = "all" | "popular" | "latest" | "non-alcoholic";
 
-export interface HomePageFiltersProps {
-  handleTitleChange: (filter: DrinksFilters) => void;
-  filter: DrinksFilters;
-}
+export type HomePageFiltersProps = {
+  handleTitleChange: (filter: DrinksFilter) => void;
+  filter: DrinksFilter;
+};
 
-export interface DrinkCardProps {
+export type DrinkCardProps = {
   drink: DrinkData;
   delay?: number;
   index: number;
-}
+};
 
-export interface fetchFunctionProps {
+export type fetchFunctionProps = {
   skip?: number;
-  filter: DrinksFilters;
-}
+  filter: DrinksFilter;
+};
 
 export type GetDrinkByNameType = {
   drinkData: FullDrinkData;
   similarDrinks: DrinkData[];
+};
+
+export type useFetchProps = {
+  data: DrinkDataResponse;
+  fn: ({ skip, filter }: fetchFunctionProps) => Promise<DrinkDataResponse>;
+};
+
+export type fetchMoreDrinksProps = {
+  numberToSkip?: number;
+  newFilter?: DrinksFilter;
+};
+
+export type DrinksChoices = {
+  title: string;
+  filter: string;
+  suffix: string;
+  image: string;
+};
+
+export type DrinkDataState = {
+  drinks: DrinkData[];
+  isMorePosts: boolean;
+  skip: number;
+  fetching: boolean;
+  filter: DrinksFilter;
 };

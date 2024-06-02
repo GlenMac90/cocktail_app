@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { getFilteredDrinks } from "@/lib/actions/drinks.actions";
-import { DrinkDataResponse, DrinksFilters } from "@/types/drinks.index";
+import { DrinkDataResponse, DrinksFilter } from "@/types/drinks.index";
 import useFetch from "@/hooks/useFetch";
 import LoadingGraphic from "../graphics/LoadingGraphic";
 import NoMoreDrinks from "../graphics/NoMoreDrinks";
@@ -30,7 +30,7 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
 
   const handleTitleChange = (newFilter: string) => {
     if (newFilter === filter) return;
-    dispatch({ type: "SET_FILTER", payload: newFilter as DrinksFilters });
+    dispatch({ type: "SET_FILTER", payload: newFilter as DrinksFilter });
     updateStateAndFetch(newFilter);
   };
 

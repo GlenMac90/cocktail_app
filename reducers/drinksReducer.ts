@@ -1,14 +1,6 @@
-import { DrinkData, DrinksFilters } from "@/types/drinks.index";
+import { DrinkData, DrinkDataState, DrinksFilter } from "@/types/drinks.index";
 
-interface State {
-  drinks: DrinkData[];
-  isMorePosts: boolean;
-  skip: number;
-  fetching: boolean;
-  filter: DrinksFilters;
-}
-
-export const initialState: State = {
+export const initialState: DrinkDataState = {
   drinks: [],
   isMorePosts: true,
   skip: 0,
@@ -18,14 +10,17 @@ export const initialState: State = {
 
 type Action =
   | { type: "SET_FETCHING"; payload: boolean }
-  | { type: "SET_FILTER"; payload: DrinksFilters }
+  | { type: "SET_FILTER"; payload: DrinksFilter }
   | {
       type: "SET_NEW_DRINKS";
       payload: { drinks: DrinkData[]; isMorePosts: boolean; skip: number };
     }
-  | { type: "RESET_AND_SET_FILTER"; payload: DrinksFilters };
+  | { type: "RESET_AND_SET_FILTER"; payload: DrinksFilter };
 
-export const drinksReducer = (state: State, action: Action): State => {
+export const drinksReducer = (
+  state: DrinkDataState,
+  action: Action
+): DrinkDataState => {
   switch (action.type) {
     case "SET_FETCHING":
       return { ...state, fetching: action.payload };

@@ -1,6 +1,6 @@
 import {
   DrinkData,
-  DrinkKeys,
+  DrinkKey,
   FullDrinkData,
   FullDrinkResponseType,
 } from "@/types/drinks.index";
@@ -14,7 +14,7 @@ export const getListOfItems = ({
 }): string[] => {
   const list: string[] = [];
   for (let i = 1; i <= 15; i++) {
-    const item = data[`${key}${i}` as DrinkKeys];
+    const item = data[`${key}${i}` as DrinkKey];
     if (item) {
       list.push(item);
     }
