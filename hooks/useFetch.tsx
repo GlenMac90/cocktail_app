@@ -1,19 +1,13 @@
 import { useReducer } from "react";
 
 import {
-  DrinkDataResponse,
-  DrinksFilters,
-  fetchFunctionProps,
+  DrinksFilter,
+  fetchMoreDrinksProps,
+  useFetchProps,
 } from "@/types/drinks.index";
 import { drinksReducer, initialState } from "@/reducers/drinksReducer";
 
-const useFetch = ({
-  data,
-  fn,
-}: {
-  data: DrinkDataResponse;
-  fn: ({ skip, filter }: fetchFunctionProps) => Promise<DrinkDataResponse>;
-}) => {
+const useFetch = ({ data, fn }: useFetchProps) => {
   const [state, dispatch] = useReducer(drinksReducer, {
     ...initialState,
     drinks: data.drinks,
@@ -24,10 +18,7 @@ const useFetch = ({
   const fetchMoreDrinks = async ({
     numberToSkip = state.skip,
     newFilter = state.filter,
-  }: {
-    numberToSkip?: number;
-    newFilter?: DrinksFilters;
-  } = {}) => {
+  }: fetchMoreDrinksProps = {}) => {
     if (!state.isMorePosts || state.fetching) return;
 
     try {
@@ -54,9 +45,9 @@ const useFetch = ({
   const updateStateAndFetch = async (newFilter: string) => {
     dispatch({
       type: "RESET_AND_SET_FILTER",
-      payload: newFilter as DrinksFilters,
+      payload: newFilter as DrinksFilter,
     });
-    fetchMoreDrinks({ numberToSkip: 0, newFilter: newFilter as DrinksFilters });
+    fetchMoreDrinks({ numberToSkip: 0, newFilter: newFilter as DrinksFilter });
   };
 
   return {

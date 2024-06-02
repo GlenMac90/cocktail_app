@@ -10,7 +10,7 @@ import {
 import { ChevronDown } from "lucide-react";
 
 import { drinksChoices } from "@/constants";
-import { DrinksFilters, HomePageFiltersProps } from "@/types/drinks.index";
+import { DrinksFilter, HomePageFiltersProps } from "@/types/drinks.index";
 import CustomButton from "../CustomButton";
 
 const HomePageFilters = ({
@@ -43,7 +43,7 @@ const HomePageFilters = ({
                 key={choice.filter}
                 additionalStyles="h-[3rem] px-3 w-full w-full flex-between bg-slate-mid hover:bg-slate-light"
                 handleClick={() =>
-                  handleTitleChange(choice.filter as DrinksFilters)
+                  handleTitleChange(choice.filter as DrinksFilter)
                 }
               >
                 <span className="base-20 text-light-100">{choice.title}</span>

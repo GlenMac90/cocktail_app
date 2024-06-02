@@ -1,9 +1,6 @@
-export const drinksChoices: {
-  title: string;
-  filter: string;
-  suffix: string;
-  image: string;
-}[] = [
+import { DrinksChoices } from "@/types/drinks.index";
+
+export const drinksChoices: DrinksChoices[] = [
   {
     title: "All Drinks",
     filter: "all",
