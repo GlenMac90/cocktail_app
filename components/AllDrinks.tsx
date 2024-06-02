@@ -45,9 +45,17 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
           filter={filter}
         />
         <div className="flex flex-col gap-8 sm:grid sm:grid-cols-2 xl:grid-cols-3 xl:gap-y-[3.125rem]">
-          {drinks.map((drink, index) => {
-            const delay = ((index % 9) + 1) * 0.1;
-            return <DrinkCard key={drink.apiId} drink={drink} delay={delay} />;
+          {drinks.map((drink, i) => {
+            const index = (i % 9) + 1;
+            const delay = index * 0.1;
+            return (
+              <DrinkCard
+                key={drink.id}
+                drink={drink}
+                delay={delay}
+                index={index}
+              />
+            );
           })}
         </div>
 
