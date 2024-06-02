@@ -10,6 +10,7 @@ Cocktail Explorer is a mobile application that allows users to browse a list of 
 - [Usage](#usage)
 - [API Reference](#api-reference)
 - [Features](#features)
+- [Design Patterns](#design-patterns)
 - [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 - [Contact Information](#contact-information)
@@ -48,10 +49,13 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 - **Endpoint:** `/filter.php`
 - **Method:** `GET`
-- **Description:** Retrieves a list of cocktails based on a search query.
+- **Description:** Retrieves a list of cocktails based on a various filters.
 - **URL:**
   ```plaintext
-  https://www.thecocktaildb.com/api/json/v1/1/filter.php?c={searchTerm}
+  https://www.thecocktaildb.com/api/json/v1/1/filter.php?c={category}
+  https://www.thecocktaildb.com/api/json/v1/1/filter.php?a={alcoholic}
+  https://www.thecocktaildb.com/api/json/v1/1/filter.php?i={ingredient}
+  https://www.thecocktaildb.com/api/json/v1/1/filter.php?g={glass}
   ```
 
 ### Example response
@@ -77,10 +81,11 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 - **Endpoint:** `/lookup.php`
 - **Method:** `GET`
-- **Description:** Retrieves information on a cocktail based on an id.
+- **Description:** Retrieves information on a cocktail based on an id or name.
 - **URL:**
   ```plaintext
   https://www.thecocktaildb.com/api/json/v1/1/lookup.php?s={drinkId}
+  https://www.thecocktaildb.com/api/json/v1/1/search.php?s={drinkName}
   ```
 
 ### Example response
@@ -111,6 +116,8 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 ## Features
 
+<img src="public/features.jpeg" alt="Banner Image for The Cocktail Corner" width="300">
+
 **Homepage Drink List** - Displays a comprehensive list of drinks, featuring images and names.
 
 **Dynamic Drink Details** - Each drink has a detailed page for more information, including ingredients, measurements, and preparation instructions.
@@ -124,6 +131,20 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 **Custom Animations** - Custom animations are featured throughout the application using Framer Motion.
 
 **ShadCN components** - Highly customisable pre built components are featured throught the app.
+
+## Design Patterns
+
+<img src="public/design-patterns.jpeg" alt="Banner Image for The Cocktail Corner" width="300">
+
+**Maintainability** - I have tried to keep components modular and scalable and dynamic, with an emphasis on reusability and readability.
+
+**Server fetching and formatting** - I am handling fetching and formatting of data on the backend, allowing for tsx components to render data without unnecessary logic or formatting on the front end. I have achieved this by creating dynamic helper functions that process and reformat the data.
+
+**Dynamic fetch function** - I have created two highly flexible server functions to handle all the data fetching necessary for the application.
+
+**Type Safety** - The use of types and interfaces is constant throughout the app, without a single use of the word 'any' to override the type check.
+
+**File and folder structure** - The app is organised to seperate components based on their role, as well as separating types, utils, server functions and constants.
 
 ## Screenshots
 
@@ -165,6 +186,7 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 ## Resources:
 
+- [TheCocktailDB](https://www.thecocktaildb.com/api.php) - Connect to this great free API.
 - [Next.js](https://nextjs.org/docs) - Explore the powerful features and API of Next.js.
 - [React](https://react.dev/) - Dive deeper into the world of React.,
 - [Tailwind](https://v2.tailwindcss.com/docs/) - Master the utility-first approach with Tailwind CSS.

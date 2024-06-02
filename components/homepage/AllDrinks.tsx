@@ -61,7 +61,9 @@ const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {
 
         {!fetching && isMorePosts && (
           <CustomButton
-            additionalStyles={"w-full h-10 xs:hidden"}
+            additionalStyles={
+              "w-full h-10 xs:hidden bg-orange-light text-slate-dark"
+            }
             handleClick={loadMore}
           >
             <span className="medium-20">See More</span>
