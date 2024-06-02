@@ -1,4 +1,4 @@
-import Logo from "./Logo";
+import Logo from "./graphics/Logo";
 
 const Navbar = () => {
   return (

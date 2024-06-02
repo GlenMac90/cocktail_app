@@ -4,12 +4,12 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
 import { getFilteredDrinks } from "@/lib/actions/drinks.actions";
-import LoadingGraphic from "./LoadingGraphic";
+import LoadingGraphic from "../graphics/LoadingGraphic";
 import { DrinkDataResponse, DrinksFilters } from "@/types/drinks.index";
 import useFetch from "@/hooks/useFetch";
-import NoMoreDrinks from "./NoMoreDrinks";
-import DrinkCard from "./DrinkCard";
-import CustomButton from "./CustomButton";
+import NoMoreDrinks from "../graphics/NoMoreDrinks";
+import DrinkCard from "../DrinkCard";
+import CustomButton from "../CustomButton";
 import HomePageFilters from "./HomePageFilters";
 
 const AllDrinks = ({ data }: { data: DrinkDataResponse }) => {

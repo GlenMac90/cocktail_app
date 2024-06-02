@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import CustomButton from "./CustomButton";
+import CustomButton from "../CustomButton";
 
 const ErrorGraphic = ({ errorPage }: { errorPage?: boolean }) => {
   return (

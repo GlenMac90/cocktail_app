@@ -1,6 +1,6 @@
 import { getAllDrinks } from "@/lib/actions/drinks.actions";
-import Hero from "@/components/Hero";
-import AllDrinks from "@/components/AllDrinks";
+import Hero from "@/components/homepage/Hero";
+import AllDrinks from "@/components/homepage/AllDrinks";
 
 export default async function Home() {
   const drinks = await getAllDrinks();

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import CustomButton from "./CustomButton";
+import CustomButton from "../CustomButton";
 
 const Hero = () => {
   return (
