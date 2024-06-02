@@ -4,6 +4,7 @@ const LoadingGraphic = () => {
   return (
     <Image
       src="/wine-glasses.gif"
+      unoptimized
       height={250}
       width={250}
       alt="

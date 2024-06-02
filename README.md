@@ -48,10 +48,13 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 - **Endpoint:** `/filter.php`
 - **Method:** `GET`
-- **Description:** Retrieves a list of cocktails based on a search query.
+- **Description:** Retrieves a list of cocktails based on a various filters.
 - **URL:**
   ```plaintext
-  https://www.thecocktaildb.com/api/json/v1/1/filter.php?c={searchTerm}
+  https://www.thecocktaildb.com/api/json/v1/1/filter.php?c={category}
+  https://www.thecocktaildb.com/api/json/v1/1/filter.php?a={alcoholic}
+  https://www.thecocktaildb.com/api/json/v1/1/filter.php?i={ingredient}
+  https://www.thecocktaildb.com/api/json/v1/1/filter.php?g={glass}
   ```
 
 ### Example response
@@ -77,10 +80,11 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 - **Endpoint:** `/lookup.php`
 - **Method:** `GET`
-- **Description:** Retrieves information on a cocktail based on an id.
+- **Description:** Retrieves information on a cocktail based on an id or name.
 - **URL:**
   ```plaintext
   https://www.thecocktaildb.com/api/json/v1/1/lookup.php?s={drinkId}
+  https://www.thecocktaildb.com/api/json/v1/1/search.php?s={drinkName}
   ```
 
 ### Example response
@@ -165,6 +169,7 @@ This project uses [TheCocktailDB API](https://www.thecocktaildb.com/api.php) to 
 
 ## Resources:
 
+- [TheCocktailDB](https://www.thecocktaildb.com/api.php) - Connect to this great free API.
 - [Next.js](https://nextjs.org/docs) - Explore the powerful features and API of Next.js.
 - [React](https://react.dev/) - Dive deeper into the world of React.,
 - [Tailwind](https://v2.tailwindcss.com/docs/) - Master the utility-first approach with Tailwind CSS.
