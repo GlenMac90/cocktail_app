@@ -30,7 +30,7 @@ const PopularDrinks = ({ drinks }: { drinks: DrinkData[] }) => {
               key={drink.id}
               className="flex w-full sm:basis-1/2 xl:basis-1/3"
             >
-              <DrinkCard drink={drink} index={index} />
+              <DrinkCard drink={drink} index={index + 1} />
             </CarouselItem>
           ))}
         </CarouselContent>

@@ -95,7 +95,7 @@ export async function getDrinkById(id: number): Promise<GetDrinkByNameType> {
         }
         return acc;
       }, [])
-      .slice(0, 10);
+      .slice(0, 9);
 
     return {
       drinkData: formattedData,
