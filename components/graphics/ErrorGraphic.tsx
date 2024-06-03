@@ -22,7 +22,7 @@ Loading graphic of two wind glasses clinking together
         options.
       </p>
       <CustomButton
-        additionalStyles="flex-center gap-2.5 h-[3.375rem] w-[17rem]"
+        additionalStyles="flex-center bg-orange-light gap-2.5 h-[3.375rem] w-[17rem]"
         link="/"
       >
         <span className="medium-20">Explore More Cocktails</span>
