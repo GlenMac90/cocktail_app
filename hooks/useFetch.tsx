@@ -19,7 +19,7 @@ const useFetch = ({ data, fn }: useFetchProps) => {
     numberToSkip = state.skip,
     newFilter = state.filter,
   }: fetchMoreDrinksProps = {}) => {
-    if (!state.isMorePosts || state.fetching) return;
+    if ((!state.isMorePosts && numberToSkip > 0) || state.fetching) return;
 
     try {
       dispatch({ type: "SET_FETCHING", payload: true });
