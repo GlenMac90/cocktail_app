@@ -40,7 +40,7 @@ const AccordionTemplate = ({ data }: { data: AccordionDataType[] }) => {
                   <ChevronDown className="size-4 shrink-0 transition-transform duration-200" />
                 </motion.div>
               </AccordionTrigger>
-              <AccordionContent className="mt-4 cursor-pointer py-2">
+              <AccordionContent className="mt-4 py-2">
                 {data.items.map((ingredient: string, index: number) => (
                   <motion.p
                     initial={{ opacity: 0, x: 30 }}
