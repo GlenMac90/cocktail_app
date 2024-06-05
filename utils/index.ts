@@ -30,8 +30,7 @@ export const formatFullDrinkData = ({
   const drinkData = data.drinks[0];
   const ingredients = getListOfItems({ data: drinkData, key: "strIngredient" });
   const measures = getListOfItems({ data: drinkData, key: "strMeasure" });
-  const instructionsArray = drinkData.strInstructions.split(".");
-  const instructions = instructionsArray.map((instruction) => instruction);
+  const instructions = drinkData.strInstructions.split(".");
 
   return {
     name: drinkData.strDrink,
