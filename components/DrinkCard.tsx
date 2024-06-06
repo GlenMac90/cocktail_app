@@ -6,7 +6,10 @@ import { motion } from "framer-motion";
 
 import { DrinkCardProps } from "@/types/drinks.index";
 
+import icons from "@/constants/fallback";
+
 const DrinkCard = ({ drink, delay, index }: DrinkCardProps) => {
+  const blurDataUrl = icons[index - 1].blurDataURL ?? "";
   if (delay) {
     return (
       <motion.figure
@@ -30,7 +33,7 @@ const DrinkCard = ({ drink, delay, index }: DrinkCardProps) => {
             src={drink.image}
             height={354}
             width={354}
-            blurDataURL={`/fallback/blur-drink-${index}.png`}
+            blurDataURL={blurDataUrl}
             placeholder="blur"
             alt="Drink Image"
             className="size-full shrink-0 rounded object-contain"
@@ -54,7 +57,7 @@ const DrinkCard = ({ drink, delay, index }: DrinkCardProps) => {
           height={354}
           width={354}
           alt="Drink Image"
-          blurDataURL={`/fallback/blur-drink-${index}.png`}
+          blurDataURL={blurDataUrl}
           placeholder="blur"
           className="w-full rounded object-contain"
         />
