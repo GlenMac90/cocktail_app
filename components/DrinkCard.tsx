@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { DrinkCardProps } from "@/types/drinks.index";
-
 import icons from "@/constants/fallback";
 
 const DrinkCard = ({ drink, delay, index }: DrinkCardProps) => {
